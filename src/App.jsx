@@ -1,8 +1,35 @@
+import { Routes, Route } from "react-router-dom";
+import Layout from "@/Layout";
+import Participants from "@/pages/Participants";
+import About from "@/pages/About";
+
 export default function App() {
   return (
-    <div style={{ padding: 40, fontFamily: "Arial, sans-serif" }}>
-      <h1>Future Time</h1>
-      <p>If you see this, App.jsx was replaced successfully.</p>
-    </div>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout currentPageName="Participants">
+            <Participants />
+          </Layout>
+        }
+      />
+      <Route
+        path="/Participants"
+        element={
+          <Layout currentPageName="Participants">
+            <Participants />
+          </Layout>
+        }
+      />
+      <Route
+        path="/About"
+        element={
+          <Layout currentPageName="About">
+            <About />
+          </Layout>
+        }
+      />
+    </Routes>
   );
 }

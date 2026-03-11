@@ -1,10 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // IMPORTANT: must match the repository name on GitHub
-  // Example: https://USERNAME.github.io/future-time/
-  base: '/future-time/',
-})
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src")
+    }
+  }
+});
