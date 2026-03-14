@@ -64,6 +64,12 @@
     .team-content { max-width: 1200px; margin: 0 auto; padding: 48px 24px 64px; }
     .team-card-masha { order: 1; }
     .team-card-hadas { order: 2; }
+    .participants-header-wrap { padding-bottom: 52px !important; }
+    .stats-bar-wrap { bottom: -90px !important; }
+    .sector-btn { overflow: visible; }
+    .stats-bar-wrap { display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .participant-card .card-front { gap: 0; }
+    .participant-card .card-photo-wrap { margin-bottom: 4px; }
     @media (max-width: 900px) {
       .about-content { padding: 20px 16px 40px !important; max-width: 100%; }
       #about-page .about-box, #about-page .about-grid > div { min-width: 0; }
@@ -72,19 +78,22 @@
       .about-grid { display: flex !important; flex-direction: column !important; gap: 24px !important; }
       .about-grid .about-col-ja { border-left: none !important; border-top: 1px solid rgba(255,255,255,0.35) !important; padding-left: 0 !important; padding-top: 24px !important; }
       .about-cta button { width: 100%; max-width: 280px; padding: 14px 20px !important; font-size: 15px !important; }
-      .participants-header-wrap { padding: 20px 16px 64px !important; }
+      .participants-header-wrap { padding: 24px 16px 24px !important; }
       .participants-header-wrap > div { justify-content: center; text-align: center; }
       .participants-header-wrap h1 { font-size: 20px !important; flex-wrap: wrap; justify-content: center; }
       .participants-header-wrap p { font-size: 13px !important; text-align: center; }
-      .participants-content { padding: 56px 16px 24px !important; }
-      .stats-bar-wrap { padding: 0 16px !important; gap: 8px !important; bottom: -24px !important; }
-      .stats-bar-wrap button { padding: 10px 14px !important; font-size: 13px !important; min-height: 44px; flex: 1 1 calc(50% - 4px); min-width: 120px; }
-      .search-row { flex-direction: column !important; align-items: stretch !important; gap: 12px !important; }
+      .participants-content { padding: 148px 16px 24px !important; }
+      .stats-bar-wrap { padding: 0 16px !important; gap: 8px !important; top: 100% !important; margin-top: 16px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; }
+      .stats-bar-wrap button { padding: 8px 6px !important; min-height: 58px; min-width: 0; flex-direction: column !important; }
+      .stats-bar-wrap button > span:last-child { font-size: 10px !important; line-height: 1.15 !important; }
+      .stats-bar-wrap button > span:first-child span:last-child { font-size: 12px !important; }
+      .search-row { flex-direction: column !important; align-items: stretch !important; gap: 8px !important; margin-bottom: 8px !important; padding: 4px 0 !important; margin-top: 8px !important; }
       .search-row input { min-width: 0 !important; max-width: none !important; width: 100% !important; }
       .search-row #search-count { text-align: center; }
-      .cards-grid { grid-template-columns: 1fr !important; gap: 16px !important; padding: 8px 0 !important; }
+      .cards-grid { grid-template-columns: 1fr !important; gap: 16px !important; padding: 0 !important; margin-top: 0 !important; }
       .participant-card { height: 360px !important; min-height: 360px !important; margin: 0 !important; }
       .participant-card .card-front > div:first-child { height: 45% !important; min-height: 140px !important; }
+      .participant-card .card-photo-wrap { margin-bottom: 8px !important; }
       .team-content { padding: 28px 16px 48px !important; }
       .team-content h1 { font-size: 26px !important; margin-bottom: 28px !important; }
       .team-cards { gap: 28px !important; padding: 0 8px; display: flex !important; flex-direction: column !important; }
@@ -96,6 +105,12 @@
     @media (min-width: 500px) and (max-width: 900px) {
       .cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
       .participant-card { height: 380px !important; min-height: 380px !important; }
+    }
+    @media (min-width: 901px) {
+      .participants-content { padding-top: 98px !important; }
+      .team-cards { flex-direction: row !important; flex-wrap: nowrap !important; justify-content: center !important; }
+      .team-card-hadas { order: 1 !important; }
+      .team-card-masha { order: 2 !important; }
     }
   </style>
 </head>

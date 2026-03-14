@@ -38,8 +38,8 @@
 
   const SECTORS = [
     { key:"all",                 label:"All Sectors",        short:"Total",    icon:"👥" },
-    { key:"Central Government",  label:"Central Government", short:"Central",  icon:"🏛" },
-    { key:"Local Government",    label:"Local Government",   short:"Local",    icon:"🏢" },
+    { key:"Central Government",  label:"Central Government", short:"Central Government", icon:"🏛" },
+    { key:"Local Government",    label:"Local Government",   short:"Local Government",   icon:"🏢" },
     { key:"Health System",       label:"Health System",      short:"Health",   icon:"❤️" },
     { key:"Civil Society",       label:"Civil Society",      short:"Civil",    icon:"🤝" },
     { key:"Academia & Research", label:"Academia & Research", short:"Academia", icon:"🎓" },
@@ -143,14 +143,14 @@
         '<h1 style="font-size:36px;font-weight:800;color:#19258B;margin:0 0 48px;text-align:center">Meet the Team</h1>' +
         '<div class="team-cards" style="display:flex;flex-wrap:wrap;justify-content:center;gap:48px">' +
           '<div class="team-card team-card-masha" style="'+cardStyle+'">' +
-            '<div class="team-photo" style="padding:24px 24px 0;background:#f1f5f9"><img src="'+PHOTO_DIR+'Masha_Robeen.png" alt="Masha Robeen" style="'+photoStyle+';display:block" /></div>' +
-            '<div class="team-bio" style="padding:28px 32px">' +
+            '<div class="team-photo" style="padding:24px 24px 32px;background:#f1f5f9"><img src="'+PHOTO_DIR+'Masha_Robeen.png" alt="Masha Robeen" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:32px 32px 28px">' +
               '<h2 style="margin:0 0 16px;font-size:24px;font-weight:800;color:#0f172a">Masha Robeen</h2>' +
               mashaBioHtml +
             '</div></div>' +
           '<div class="team-card team-card-hadas" style="'+cardStyle+'">' +
-            '<div class="team-photo" style="padding:24px 24px 0;background:#f1f5f9"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
-            '<div class="team-bio" style="padding:28px 32px">' +
+            '<div class="team-photo" style="padding:24px 24px 32px;background:#f1f5f9"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:32px 32px 28px">' +
               '<h2 style="margin:0 0 16px;font-size:24px;font-weight:800;color:#0f172a">Dr. Hadas Kushelevich</h2>' +
               hadasBioHtml +
             '</div></div>' +
@@ -189,8 +189,8 @@
     return '<div class="participant-card" data-id="' + p.id + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
-          '<div style="width:100%;height:200px;min-height:200px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center">'+photoHtml+'</div>' +
-          '<div style="flex:1;padding:14px 16px;min-height:0;background:'+(c.light||c.bg)+';color:'+(c.text||'#334155')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">' +
+          '<div class="card-photo-wrap" style="width:100%;height:200px;min-height:200px;overflow:hidden;background:#f8fafc;display:flex;align-items:center;justify-content:center">'+photoHtml+'</div>' +
+          '<div style="flex:1;padding:18px 16px 14px;min-height:0;background:'+(c.light||c.bg)+';color:'+(c.text||'#334155')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">' +
             '<div style="flex-shrink:0;display:flex;flex-direction:column;gap:8px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div><div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+'">'+org+'</div></div>' +
             '<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
           '</div>' +
@@ -214,7 +214,7 @@
     var statsHtml = SECTORS.map(function(s){
       var c = SC[s.key] || { bg:"#081679", border:"#3d4fcc", light:"#dde1f5", text:"#081679" };
       var isActive = activeSector === s.key;
-      return '<button data-sector="'+s.key+'" style="flex:1;background:'+(isActive?c.bg:(c.light||'white'))+';border:2px solid '+(isActive?c.border:(c.border||'#cbd5e1'))+';color:'+(isActive?'white':(c.text||'#475569'))+';border-radius:999px;padding:12px 16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap"><span style="font-size:18">'+s.icon+'</span><span style="font-weight:900;font-size:20">'+(cnt[s.key]||0)+'</span><span style="font-size:12">'+s.short+'</span></button>';
+      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+(isActive?c.bg:(c.light||'white'))+';border:2px solid '+(isActive?c.border:(c.border||'#cbd5e1'))+';color:'+(isActive?'white':(c.text||'#475569'))+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
     }).join('');
 
     var searchRow = container.querySelector('.search-row');
@@ -230,8 +230,8 @@
           '<div class="stats-bar-wrap" id="stats-bar" style="position:absolute;left:50%;transform:translateX(-50%);bottom:-30px;width:100%;max-width:1100px;padding:0 24px;box-sizing:border-box;z-index:10">'+statsHtml+'</div>' +
         '</div>' +
         '<div class="participants-content">' +
-          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:12px;margin-bottom:40px;padding:16px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:1;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid #e2e8f0;border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#f8fafc" /><span id="search-count" style="font-size:14px;color:#64748b;font-weight:600">'+filtered.length+' participant'+(filtered.length!==1?'s':'')+'</span></div>' +
-          '<div class="cards-grid" style="margin-top:24px;padding:16px 0" id="cards-container">' +
+          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:12px;margin-bottom:12px;padding:8px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:1;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid #e2e8f0;border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#f8fafc" /><span id="search-count" style="font-size:14px;color:#64748b;font-weight:600">'+filtered.length+' participant'+(filtered.length!==1?'s':'')+'</span></div>' +
+          '<div class="cards-grid" style="margin-top:4px;padding:4px 0" id="cards-container">' +
             filtered.map(renderParticipantCard).join('') +
           '</div>' +
           '<div class="participants-empty" style="display:none;text-align:center;padding:60px;color:#94a3b8"><div style="font-size:44px;margin-bottom:12px">🔍</div><div style="font-size:17px;font-weight:700">No participants found</div></div>' +
