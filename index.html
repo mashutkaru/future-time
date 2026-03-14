@@ -29,6 +29,7 @@
     }
     nav .logo { display: flex; align-items: center; flex: 1; }
     nav .logo img { height: 48px; object-fit: contain; }
+    nav .logo .logo-mobile, nav .logo-right .logo-mobile { display: none; }
     nav .nav-buttons { display: flex; gap: 8px; justify-content: center; flex: 2; }
     nav .logo-right { display: flex; align-items: center; justify-content: flex-end; flex: 1; }
     nav .logo-right img { height: 48px; object-fit: contain; }
@@ -44,12 +45,15 @@
 
     /* Mobile / tablet responsive - applies below 900px */
     @media (max-width: 900px) {
-      nav { padding: 12px 16px !important; flex-wrap: wrap; gap: 10px; justify-content: center; }
-      nav .logo { display: none; }
-      nav .logo-right { order: -1; flex: 1 1 100%; justify-content: center; }
-      nav .logo-right img { height: 38px !important; }
-      nav .nav-buttons { flex: none; justify-content: center; gap: 6px; }
-      nav button { padding: 10px 14px !important; font-size: 13px !important; min-height: 44px; }
+      nav { padding: 10px 12px !important; flex-wrap: nowrap; gap: 6px; justify-content: space-between; align-items: center; }
+      nav .logo { display: flex !important; flex: 0 0 auto; }
+      nav .logo .logo-desktop { display: none !important; }
+      nav .logo .logo-mobile { display: block !important; height: 36px; object-fit: contain; }
+      nav .logo-right { flex: 0 0 auto; }
+      nav .logo-right .logo-desktop { display: none !important; }
+      nav .logo-right .logo-mobile { display: block !important; height: 36px; object-fit: contain; }
+      nav .nav-buttons { flex: 1; justify-content: center; gap: 4px; min-width: 0; }
+      nav button { padding: 8px 10px !important; font-size: 12px !important; min-height: 40px; }
     }
     .about-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
     .about-box { background: #2a2d71; border-radius: 20px; padding: 40px 48px; color: white; }
@@ -97,13 +101,19 @@
 </head>
 <body>
   <nav>
-    <div class="logo"><img src="og-image.png" alt="FutureTime" /></div>
+    <div class="logo">
+      <img src="og-image.png" class="logo-desktop" alt="FutureTime" />
+      <img src="images/mobile-logo-en.png" class="logo-mobile" alt="FutureTime" />
+    </div>
     <div class="nav-buttons">
       <button data-page="about" class="nav-btn">About</button>
       <button data-page="participants" class="nav-btn">Participants</button>
       <button data-page="team" class="nav-btn">Meet the Team</button>
     </div>
-    <div class="logo-right"><img src="images/navbar-logo.png" alt="FutureTime" /></div>
+    <div class="logo-right">
+      <img src="images/navbar-logo.png" class="logo-desktop" alt="FutureTime" />
+      <img src="images/mobile-logo-he.png" class="logo-mobile" alt="FutureTime" />
+    </div>
   </nav>
 
   <main id="app">
