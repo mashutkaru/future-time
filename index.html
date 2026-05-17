@@ -17,13 +17,14 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
     :root {
-      --teal-dark: #3E788C;
+      --teal-dark: #214F63;
+      --teal-hero: #3E788C;
       --teal-mid: #4D8796;
       --teal-soft: #7EA7B5;
       --teal-pale: #CEDDE2;
       --text-on-dark: #ffffff;
-      --text-on-light: #0E6478;
-      --nav-bg: #0E6478;
+      --text-on-light: #214F63;
+      --nav-bg: #214F63;
       --nav-accent: var(--teal-soft);
       --nav-highlight: var(--teal-pale);
       --nav-purple: var(--teal-soft);
@@ -75,11 +76,19 @@
     .stats-bar-wrap { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); gap: 0; }
     .team-page { min-height: 100vh; background: var(--teal-pale); }
-    .team-content { max-width: 1200px; margin: 0 auto; padding: 48px 24px 64px; }
-    .team-content .team-title { font-size: 36px; font-weight: 800; color: var(--teal-dark); margin: 0 0 48px; text-align: center; }
-    .team-section { margin-bottom: 44px; }
-    .team-section-program-team { margin-bottom: 0; }
-    .team-section-title { margin: 0 0 20px; text-align: center; font-size: 24px; font-weight: 800; color: var(--teal-dark); letter-spacing: 0.01em; }
+    .team-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
+    .team-banner h1 { font-family: 'Inter', sans-serif; }
+    .about-box .team-section-title {
+      margin: 0 0 28px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+    .about-box.team-section-box { margin-bottom: 24px; }
+    .about-box.team-section-box:last-child { margin-bottom: 0; }
     .team-cards { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; }
     .team-cards-main { gap: 48px; }
     .team-cards-new { gap: 24px; }
@@ -175,7 +184,9 @@
       .participant-card .card-back-upper { min-height: 160px !important; }
       .participant-card .card-front > div:nth-child(3) { flex-shrink: 0 !important; }
       .team-content { padding: 28px 16px 48px !important; }
-      .team-content h1, .team-title { font-size: 26px !important; margin-bottom: 28px !important; }
+      .team-banner h1 { font-size: 24px !important; }
+      .about-box .team-section-title { font-size: 16px !important; margin-bottom: 20px !important; }
+      .about-box.team-section-box { padding: 28px 20px 36px !important; border-radius: 16px !important; }
       .team-cards { gap: 28px !important; padding: 0 8px; display: flex !important; flex-direction: column !important; }
       .team-card, .team-card-masha, .team-card-hadas, .team-card-new { max-width: 100% !important; width: 100% !important; }
       .team-card .team-name { padding: 20px 20px 24px !important; text-align: center !important; }
@@ -251,6 +262,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=34"></script>
+  <script src="script.js?v=44"></script>
 </body>
 </html>

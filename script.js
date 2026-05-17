@@ -65,10 +65,10 @@
     { key:"Academia & Research", label:"Academia & Research", short:"Academia & Research", icon:"🎓" },
   ];
 
-  var P = { dark:'#3E788C', mid:'#4D8796', soft:'#7EA7B5', pale:'#CEDDE2', text:'#3E788C' };
+  var P = { dark:'#214F63', hero:'#3E788C', mid:'#4D8796', soft:'#7EA7B5', pale:'#CEDDE2', text:'#214F63', nav:'#214F63' };
   var PRIMARY = P.dark;
   const SC = {
-    "all":                 { bg:"#5b5484", light:"#C0C8D5", border:"#8b92a8", text:"#3d3a5c" },
+    "all":                 { bg:P.nav, light:P.pale, border:P.nav, text:"#ffffff" },
     "Central Government":  { bg:"#6b6590", light:"#CFCBE1", border:"#8b85a8", text:"#3d3a5c" },
     "Local Government":    { bg:"#8a7572", light:"#DACFCD", border:"#9a9090", text:"#3d3a5c" },
     "Healthcare System":   { bg:"#5783CB", light:"#C0C8D5", border:"#6b9bd4", text:"#3d3a5c" },
@@ -169,7 +169,7 @@
     var goalsJaHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleJa+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descJa+'</div></div>'; }).join('');
 
     container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
-      '<div class="about-banner" style="background:'+P.dark+';width:100%;overflow:hidden">' +
+      '<div class="about-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
         '<div style="padding:48px 24px;text-align:center"><div style="display:flex;align-items:center;justify-content:center;gap:14px"><img src="images/just_the_round_logo.png" alt="Future Time" style="height:54px;width:auto;display:block" /><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Future Time Program</h1></div></div>' +
       '</div>' +
       '<div class="about-content">' +
@@ -253,10 +253,13 @@
     var yuvalBioHtml = yuvalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var talBioHtml = talPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var photoStyle = 'width:100%;height:280px;object-fit:contain;object-position:center center';
-    container.innerHTML = '<div class="team-page">' +
-      '<div class="team-content">' +
-        '<h1 class="team-title">Meet the Team</h1>' +
-        '<div class="team-section team-section-organizers">' +
+    var teamBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px';
+    container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
+      '<div class="about-banner team-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
+        '<div style="padding:48px 24px;text-align:center"><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Meet the Team</h1></div>' +
+      '</div>' +
+      '<div class="about-content team-content">' +
+        '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +
           '<h2 class="team-section-title">Delegation Organizers</h2>' +
           '<div class="team-cards team-cards-main">' +
           '<div class="team-card team-card-masha">' +
@@ -270,7 +273,7 @@
             '<div class="team-bio" style="padding:0 32px 32px 28px">'+hadasBioHtml+'</div>' +
           '</div>' +
         '</div></div>' +
-        '<div class="team-section team-section-program-team">' +
+        '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +
           '<h2 class="team-section-title">Future Time Program Team</h2>' +
         '<div class="team-cards team-cards-new">' +
           '<div class="team-card team-card-hadas-barzilai team-card-new">' +
@@ -348,9 +351,12 @@
     var filtered = filterParticipants(activeSector, search);
 
     var statsHtml = SECTORS.map(function(s){
-      var c = SC[s.key] || { bg:"#5b5484", border:"#8b92a8", light:"#C0C8D5", text:"#3d3a5c" };
+      var c = SC[s.key] || { bg:P.nav, border:P.nav, light:P.pale, text:"#ffffff" };
       var isActive = activeSector === s.key;
-      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+(isActive?c.bg:'white')+';border:2px solid '+(isActive?c.border:(c.border||P.soft))+';color:'+(isActive?'white':P.text)+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
+      var btnBg = isActive ? (s.key === 'all' ? P.nav : c.bg) : 'white';
+      var btnColor = isActive ? 'white' : P.text;
+      var btnBorder = isActive ? (s.key === 'all' ? P.nav : c.border) : (c.border || P.soft);
+      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+btnBg+';border:2px solid '+btnBorder+';color:'+btnColor+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
     }).join('');
 
     var searchRow = container.querySelector('.search-row');
@@ -359,7 +365,7 @@
 
     if (!searchRow) {
       container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
-        '<div class="participants-header-wrap" style="background:'+P.dark+';padding:28px 48px 24px;color:white;position:relative">' +
+        '<div class="participants-header-wrap" style="background:'+P.hero+';padding:28px 48px 24px;color:white;position:relative">' +
           '<div style="max-width:1204px;margin:0 auto;display:flex;align-items:flex-start;justify-content:flex-start;gap:28px">' +
             '<div style="flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:6px 12px 0 0"><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:10px;justify-content:flex-start;line-height:1.1">Program Participants</h1><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Choose participants by affiliation label</p><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Search and filter all program participants across sectors</p></div>' +
             '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 640px;max-width:640px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>' +
