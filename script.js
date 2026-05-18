@@ -57,12 +57,13 @@
   ];
 
   const STEERING_COMMITTEE = [
-    { id:"sc1", key:"Oriel_Chazum", nameEn:"Oriel Chazum", nameJa:"ウリエル・カズム", nameHe:"אוריאל כזום", org:"National Insurance Institute", orgHe:"המוסד לביטוח לאומי", role:"Deputy Director General of Subsistence Benefits, Employment, and Senior Citizens Pensions", roleHe:"סגן מנכ״ל תחום קצבאות קיום, תעסוקה ופנסיות לאזרחים ותיקים", email:"urielc@nioi.gov.il", photo:"Oriel_Chazum.jpg" },
-    { id:"sc2", key:"Yariv_Man", nameEn:"Yariv Man", nameJa:"ヤリヴ・マン", nameHe:"יריב מן", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Deputy Director General, Administration for Senior Citizens", roleHe:"סגן מנהל האגף לאזרחים ותיקים", email:"YarivM@molsa.gov.il", photo:"Yariv_Man.jpg" },
-    { id:"sc3", key:"Hama_Israeli", nameEn:"Hama Israeli", nameJa:"ハマ・イスラエリ", nameHe:"חמא ישראלי", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Senior Division Manager, Housing Systems for Senior Citizens", roleHe:"מנהלת בכירה, מערכות דיור לאזרחים ותיקים", email:"hamai@molsa.gov.il", photo:null },
-    { id:"sc4", key:"Yafit_Bar", nameEn:"Yafit Bar", nameJa:"ヤフィット・バル", nameHe:"יפית בר", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgHe:"משרד לשוויון חברתי ולקידום מעמד האישה", role:"Director of Employment and Rights for Seniors", roleHe:"מנהלת תחום תעסוקה וזכויות לאזרחים ותיקים", email:"yafitba@mse.gov.il", photo:"Yafit_Bar.jpeg" },
+    { id:"sc1", key:"Oriel_Chazum", nameEn:"Oriel Chazum", nameJa:"ウリエル・カズム", nameHe:"אוריאל כזום", org:"National Insurance Institute", orgHe:"המוסד לביטוח לאומי", role:"Deputy Director General of Subsistence Benefits, Employment, and Senior Citizens Pensions", roleHe:"סגן מנכ״ל תחום קצבאות קיום, תעסוקה ופנסיות לאזרחים ותיקים", email:"urielc@nioi.gov.il", photo:"Oriel_Chazum.png" },
+    { id:"sc2", key:"Yariv_Man", nameEn:"Yariv Man", nameJa:"ヤリヴ・マン", nameHe:"יריב מן", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Deputy Director General, Administration for Senior Citizens", roleHe:"סגן מנהל האגף לאזרחים ותיקים", email:"YarivM@molsa.gov.il", photo:"Yariv_Man.png" },
+    { id:"sc3", key:"Hama_Israeli", nameEn:"Hama Israeli", nameJa:"ハマ・イスラエリ", nameHe:"חמא ישראלי", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Senior Division Manager, Housing Systems for Senior Citizens", roleHe:"מנהלת בכירה, מערכות דיור לאזרחים ותיקים", email:"hamai@molsa.gov.il", photo:"Hama_Israeli.png" },
+    { id:"sc4", key:"Yafit_Bar", nameEn:"Yafit Bar", nameJa:"ヤフィット・バル", nameHe:"יפית בר", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgHe:"משרד לשוויון חברתי ולקידום מעמד האישה", role:"Director of Employment and Rights for Seniors", roleHe:"מנהלת תחום תעסוקה וזכויות לאזרחים ותיקים", email:"yafitba@mse.gov.il", photo:"Yafit_Bar.png" },
   ];
   var STEERING_BADGE = "Steering Committee";
+  var STEERING_PHOTO_VER = 3;
 
   const SECTORS = [
     { key:"all",                 label:"All Sectors",        short:"Total",    icon:"👥" },
@@ -316,7 +317,8 @@
   function steeringPhotoHtml(m) {
     var nameEn = escapeHtml(m.nameEn);
     if (m.photo) {
-      return '<img src="'+PHOTO_DIR+m.photo+'" alt="'+nameEn+'" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block"/>';
+      var photoSrc = PHOTO_DIR + m.photo + '?v=' + (m.photoVer != null ? m.photoVer : STEERING_PHOTO_VER);
+      return '<img src="'+photoSrc+'" alt="'+nameEn+'" loading="lazy" decoding="async"/>';
     }
     var initials = m.nameEn.split(/\s+/).map(function (w) { return w.charAt(0); }).join('').slice(0, 2).toUpperCase();
     return '<div class="steering-photo-placeholder" aria-hidden="true" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:'+P.pale+';color:'+P.dark+';font-size:42px;font-weight:800">'+initials+'</div>';
@@ -335,18 +337,18 @@
     var role = escapeHtml(m.role);
     var roleHe = escapeHtml(m.roleHe || '');
     var email = escapeHtml(m.email);
-    var photoInner = '<div class="steering-photo-inner" style="width:100%;height:100%;min-height:0;display:flex">'+steeringPhotoHtml(m)+'</div>';
-    return '<div class="steering-card participant-card" data-steering-id="'+m.id+'" style="perspective:900px;cursor:pointer;height:400px;min-height:400px">' +
-      '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
-        '<div class="card-front" style="position:absolute;inset:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
-          '<div class="card-photo-wrap" style="flex:3 1 0;min-height:140px;overflow:hidden;display:flex">'+photoInner+'</div>' +
-          '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;background:'+P.pale+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
-            '<div class="card-front-names" style="display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:16px;color:'+P.dark+'">'+nameEn+'</div>'+nameJaHtml+nameHeHtml+
-            '<div class="card-front-org" style="font-size:12px;font-weight:600;color:'+P.text+';margin-top:4px;line-height:1.35">'+role+'</div>' +
-            '<div style="font-size:12px;color:'+P.mid+';margin-top:2px">'+org+'</div></div>' +
-            '<div class="card-front-label-wrap" style="margin-top:6px"><div style="background:'+c.bg+';color:white;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px">'+STEERING_BADGE+'</div></div>' +
+    var photoInner = '<div class="steering-photo-inner">'+steeringPhotoHtml(m)+'</div>';
+    return '<div class="steering-card participant-card" data-steering-id="'+m.id+'" style="perspective:900px;cursor:pointer">' +
+      '<div class="card-inner" style="transition:transform 0.55s">' +
+        '<div class="card-front" style="background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
+          '<div class="card-photo-wrap">'+photoInner+'</div>' +
+          '<div class="card-info">' +
+            '<div class="card-front-names" style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:800;font-size:16px;color:'+P.dark+'">'+nameEn+'</div>'+nameJaHtml+nameHeHtml+
+            '<div class="card-front-org" style="font-size:12px;font-weight:600;color:'+P.text+';margin-top:2px">'+role+'</div>' +
+            '<div class="card-org" style="font-size:12px;margin:0">'+org+'</div></div>' +
+            '<div class="card-front-label-wrap"><div style="background:'+c.bg+';color:white;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px">'+STEERING_BADGE+'</div></div>' +
           '</div>' +
-          '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">View Details</div>' +
+          '<div class="view-details">View Details</div>' +
         '</div>' +
         '<div class="card-back" style="position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;overflow:hidden">' +
           '<div style="text-align:center;padding:12px 0 8px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+(nameHe ? '<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div>' : '')+'</div>' +
@@ -358,6 +360,7 @@
         '</div>' +
       '</div></div>';
   }
+
 
   function initSteeringCarousel(container) {
     var carousel = container.querySelector('.steering-carousel');
@@ -401,7 +404,7 @@
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
           '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;display:flex;align-items:stretch;justify-content:stretch">'+photoHtml+'</div>' +
           '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+P.pale+';color:'+(c.text||P.text)+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
-            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:16px;color:'+(c.text||P.dark)+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||P.mid)+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||P.text)+';margin-top:4px">'+org+orgLine2+'</div></div>' +
+            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:4px"><div style="font-weight:800;font-size:16px;color:'+(c.text||P.dark)+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||P.mid)+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||P.text)+';margin-top:4px">'+org+orgLine2+'</div></div>' +
             '<div class="card-front-label-wrap" style="display:flex;align-items:center;justify-content:center;min-height:0;margin-top:2px"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
           '</div>' +
           '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">View Details</div>' +
@@ -433,13 +436,12 @@
     var steeringBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:32px';
     var steeringCardsHtml = STEERING_COMMITTEE.map(renderSteeringCard).join('');
     var steeringSectionHtml =
-      '<section class="steering-section" style="margin-bottom:28px">' +
+      '<section class="steering-section">' +
+        '<h2 class="all-participants-title steering-section-heading">Steering Committee</h2>' +
         '<div class="about-box steering-section-box" style="'+steeringBoxStyle+'">' +
-          '<h2 class="steering-section-title" style="margin:0 0 24px;text-align:center;font-size:20px;font-weight:900;letter-spacing:0.08em;color:#fff;text-transform:uppercase">Steering Committee</h2>' +
           '<div class="steering-carousel">' +
-            '<button type="button" class="steering-carousel-prev" aria-label="Previous steering committee member">‹</button>' +
-            '<button type="button" class="steering-carousel-next" aria-label="Next steering committee member">›</button>' +
-            '<p class="steering-swipe-hint" aria-hidden="true">← swipe →</p>' +
+            '<button type="button" class="steering-carousel-prev" aria-label="Previous steering committee member">&lt;</button>' +
+            '<button type="button" class="steering-carousel-next" aria-label="Next steering committee member">&gt;</button>' +
             '<div class="steering-carousel-track">'+steeringCardsHtml+'</div>' +
           '</div>' +
         '</div>' +
@@ -458,7 +460,7 @@
           '</div>' +
         '</div>' +
         '<div class="participants-content">' +
-          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:6px;margin-bottom:6px;padding:6px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:0 1 420px;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid '+P.soft+';border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:white" /></div>' +
+          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:0;margin-bottom:6px;padding:4px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:0 1 420px;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid '+P.soft+';border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:white" /></div>' +
           steeringSectionHtml +
           '<section class="all-participants-section">' +
           '<h2 class="all-participants-title" style="margin:0 0 16px;font-size:22px;font-weight:800;color:'+P.dark+'">All Participants</h2>' +
