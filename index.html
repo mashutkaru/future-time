@@ -16,7 +16,20 @@
   <meta property="og:url" content="https://mashutkaru.github.io/Future-Time-Delegation/" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-    :root { --nav-yellow: #fecf17; --nav-purple: #8837be; --nav-bg: #2a2d71; }
+    :root {
+      --teal-dark: #214F63;
+      --teal-hero: #3E788C;
+      --teal-mid: #4D8796;
+      --teal-soft: #7EA7B5;
+      --teal-pale: #CEDDE2;
+      --text-on-dark: #ffffff;
+      --text-on-light: #214F63;
+      --nav-bg: #214F63;
+      --nav-accent: var(--teal-soft);
+      --nav-highlight: var(--teal-pale);
+      --nav-purple: var(--teal-soft);
+      --nav-yellow: var(--teal-pale);
+    }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
     nav {
@@ -39,8 +52,8 @@
       border-radius: 999px; padding: 10px 24px; font-weight: 500; font-size: 15px;
       cursor: pointer; font-family: inherit; transition: all 0.2s;
     }
-    nav button:hover { background: var(--nav-yellow); color: var(--nav-bg); font-weight: 700; }
-    nav button.active { background: var(--nav-yellow); color: var(--nav-bg); font-weight: 800; }
+    nav button:hover { background: var(--nav-highlight); color: var(--text-on-light); font-weight: 700; }
+    nav button.active { background: var(--nav-highlight); color: var(--text-on-light); font-weight: 800; }
     #about-page, #participants-page, #team-page { display: none; }
     #about-page.active, #participants-page.active, #team-page.active { display: block; }
 
@@ -57,14 +70,180 @@
       nav button { padding: 8px 10px !important; font-size: 12px !important; min-height: 40px; }
     }
     .about-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
-    .about-box { background: #2a2d71; border-radius: 20px; padding: 40px 48px; color: white; }
+    .about-box { background: var(--teal-dark); border-radius: 20px; padding: 40px 48px; color: var(--text-on-dark); }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
-    .participants-content { max-width: 1300px; margin: 0 auto; padding: 52px 48px 0px; }
+    .participants-content { max-width: 1300px; margin: 0 auto; padding: 20px 48px 0px; }
+    .participants-content > .search-row { margin-top: 0; }
     .stats-bar-wrap { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); gap: 0; }
-    .team-content { max-width: 1200px; margin: 0 auto; padding: 48px 24px 64px; }
-    .team-card-masha { order: 1; }
-    .team-card-hadas { order: 2; }
+    .steering-section-box { padding: 32px 28px 28px !important; overflow: hidden; }
+    .steering-carousel { position: relative; }
+    .steering-carousel-track {
+      display: flex;
+      align-items: stretch;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 48px 12px;
+      scrollbar-width: none;
+    }
+    .steering-carousel-track::-webkit-scrollbar { display: none; }
+    .steering-section { margin-bottom: 28px; }
+    .steering-section-heading { text-align: left !important; color: #214F63 !important; }
+    .steering-card.participant-card {
+      width: 285px;
+      max-width: 100%;
+      height: auto;
+      min-height: 0;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 285px;
+      scroll-snap-align: center;
+      margin: 0 !important;
+      overflow: hidden;
+    }
+    .steering-card .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      flex: 1 1 auto;
+      transform-style: preserve-3d;
+      transition: transform 0.55s;
+    }
+    .steering-card .card-front {
+      position: relative !important;
+      inset: auto !important;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 0;
+      width: 100%;
+      backface-visibility: hidden;
+    }
+    .steering-card .card-back {
+      position: absolute !important;
+      inset: 0 !important;
+      backface-visibility: hidden;
+    }
+    .steering-card .card-photo-wrap {
+      width: 100%;
+      height: 310px;
+      min-height: 310px;
+      flex: 0 0 310px !important;
+      overflow: hidden;
+      background: #fff;
+    }
+    .steering-card .steering-photo-inner {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: hidden;
+    }
+    .steering-card .steering-photo-inner img,
+    .steering-card .steering-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      max-height: none;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .steering-card .card-info {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: hidden;
+      padding: 12px 14px 0;
+      margin-bottom: 0;
+      background: var(--teal-pale);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+      box-sizing: border-box;
+    }
+    .steering-card .card-info .card-front-names {
+      flex: 0 1 auto;
+      min-height: 0;
+      width: 100%;
+      overflow-y: visible;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+    }
+    .steering-card .card-info .card-org {
+      margin-bottom: 0;
+    }
+    .steering-card .card-front-label-wrap {
+      flex-shrink: 0;
+      margin-top: auto;
+      margin-bottom: 4px;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .steering-card .card-front-org {
+      line-height: 1.4;
+    }
+    .steering-card .card-info .card-org {
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--teal-dark);
+    }
+    .steering-card .view-details {
+      flex: 0 0 auto;
+      flex-shrink: 0;
+      margin: 0;
+      padding: 8px;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      font-size: 10px;
+      line-height: 1.2;
+      color: #fff;
+      background: var(--teal-hero);
+    }
+    .steering-carousel-prev, .steering-carousel-next {
+      position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+      width: 40px; height: 40px; border-radius: 50%; border: none;
+      background: rgba(255,255,255,0.95); color: var(--teal-dark);
+      font-size: 26px; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    }
+    .steering-carousel-prev { left: 6px; }
+    .steering-carousel-next { right: 6px; }
+    .all-participants-section { margin-top: 8px; }
+    .all-participants-title { font-family: 'Inter', sans-serif; }
+    .team-page { min-height: 100vh; background: var(--teal-pale); }
+    .team-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
+    .team-banner h1 { font-family: 'Inter', sans-serif; }
+    .about-box .team-section-title {
+      margin: 0 0 28px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+    .about-box.team-section-box { margin-bottom: 24px; }
+    .about-box.team-section-box:last-child { margin-bottom: 0; }
+    .team-cards { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; }
+    .team-cards-main { gap: 48px; }
+    .team-cards-new { gap: 24px; }
+    .team-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+    .team-card-masha { order: 1; max-width: 560px; }
+    .team-card-hadas { order: 2; max-width: 560px; }
+    .team-card-new { width: 100%; max-width: 360px; }
     .team-card .team-photo { background: #fff !important; }
     .participants-header-wrap { padding-bottom: 28px !important; }
     /* Participants header typography */
@@ -132,12 +311,12 @@
       .participants-header-wrap > div { justify-content: center; text-align: center; gap: 6px !important; }
       .participants-header-wrap h1 { font-size: 18px !important; flex-wrap: wrap; justify-content: center; margin: 0 !important; }
       .participants-header-wrap p { font-size: 12px !important; text-align: center; margin: 0 !important; }
-      .participants-content { padding: 105px 16px 24px !important; }
+      .participants-content { padding: 88px 16px 24px !important; }
       .stats-bar-wrap { padding: 0 16px !important; gap: 6px !important; top: 100% !important; margin-top: 10px !important; bottom: auto !important; left: 50% !important; transform: translateX(-50%) !important; display: grid !important; grid-template-columns: repeat(3, 1fr) !important; position: absolute !important; }
       .stats-bar-wrap button { padding: 5px 4px !important; min-height: 40px; min-width: 0; flex-direction: column !important; gap: 2px !important; }
       .stats-bar-wrap button > span:last-child { font-size: 9px !important; line-height: 1.15 !important; }
       .stats-bar-wrap button > span:first-child span:last-child { font-size: 11px !important; }
-      .search-row { flex-direction: column !important; align-items: stretch !important; gap: 8px !important; margin-bottom: 8px !important; padding: 4px 0 !important; margin-top: 8px !important; }
+      .search-row { flex-direction: column !important; align-items: stretch !important; gap: 8px !important; margin-bottom: 8px !important; padding: 4px 0 !important; margin-top: 0 !important; }
       .search-row input { flex: 0 0 auto !important; min-width: 0 !important; max-width: none !important; width: 100% !important; height: auto !important; }
       .search-row #search-count { text-align: center; }
       .cards-grid { grid-template-columns: 1fr !important; gap: 16px !important; padding: 0 !important; margin-top: 0 !important; }
@@ -153,14 +332,66 @@
       .participant-card .card-back-upper { min-height: 160px !important; }
       .participant-card .card-front > div:nth-child(3) { flex-shrink: 0 !important; }
       .team-content { padding: 28px 16px 48px !important; }
-      .team-content h1 { font-size: 26px !important; margin-bottom: 28px !important; }
+      .team-banner h1 { font-size: 24px !important; }
+      .about-box .team-section-title { font-size: 16px !important; margin-bottom: 20px !important; }
+      .about-box.team-section-box { padding: 28px 20px 36px !important; border-radius: 16px !important; }
       .team-cards { gap: 28px !important; padding: 0 8px; display: flex !important; flex-direction: column !important; }
-      .team-card { max-width: 100% !important; }
+      .team-card, .team-card-masha, .team-card-hadas, .team-card-new { max-width: 100% !important; width: 100% !important; }
       .team-card .team-name { padding: 20px 20px 24px !important; text-align: center !important; }
       .team-card .team-photo { height: 240px !important; padding: 0 20px 24px !important; overflow: hidden !important; background: #fff !important; }
       .team-card .team-photo img { width: 100% !important; height: 100% !important; max-height: 240px !important; object-fit: contain !important; }
       .team-card .team-bio { padding: 0 20px 28px !important; }
       .team-card h2 { font-size: 20px !important; }
+      .steering-section-box { padding: 24px 16px 20px !important; border-radius: 16px !important; }
+      .steering-carousel-track { padding: 4px 40px 12px !important; gap: 12px !important; }
+      .steering-carousel-prev, .steering-carousel-next { width: 32px !important; height: 32px !important; font-size: 20px !important; }
+      .steering-card.participant-card {
+        width: min(285px, 88vw) !important;
+        flex: 0 0 min(285px, 88vw) !important;
+        height: auto !important;
+        min-height: 0 !important;
+        align-self: stretch !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .steering-card.participant-card .card-front {
+        height: 100% !important;
+        min-height: 0 !important;
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .steering-card .card-inner {
+        height: 100% !important;
+        flex: 1 1 auto !important;
+      }
+      .steering-card .card-photo-wrap {
+        width: 100% !important;
+        height: 310px !important;
+        min-height: 310px !important;
+        flex: 0 0 310px !important;
+      }
+      .steering-card .steering-photo-inner img,
+      .steering-card .steering-photo-placeholder {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+      }
+      .steering-card.participant-card .card-front > div:nth-child(2) {
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .steering-card.participant-card .card-front-label-wrap {
+        margin-top: auto !important;
+        margin-bottom: 4px !important;
+        padding-bottom: 0 !important;
+      }
+      .all-participants-title,
+      .steering-section-heading { font-size: 18px !important; }
     }
 
     @media (min-width: 901px) {
@@ -180,13 +411,76 @@
     @media (min-width: 500px) and (max-width: 900px) {
       .cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
       .participant-card { height: 460px !important; min-height: 460px !important; }
+      .steering-card.participant-card { height: auto !important; min-height: 0 !important; }
     }
     @media (min-width: 901px) {
-      .participants-content { padding-top: 28px !important; }
-      .team-cards { flex-direction: row !important; flex-wrap: nowrap !important; justify-content: center !important; }
+      .participants-content { padding-top: 12px !important; }
+      .steering-card.participant-card {
+        width: 285px !important;
+        flex: 0 0 285px !important;
+        height: auto !important;
+        min-height: 0 !important;
+        align-self: stretch !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .steering-card.participant-card .card-front {
+        height: 100% !important;
+        min-height: 0 !important;
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .steering-card .card-inner {
+        height: 100% !important;
+        flex: 1 1 auto !important;
+      }
+      .steering-card .card-photo-wrap {
+        width: 100% !important;
+        height: 310px !important;
+        min-height: 310px !important;
+        flex: 0 0 310px !important;
+      }
+      .steering-card .steering-photo-inner img,
+      .steering-card .steering-photo-placeholder {
+        object-fit: cover !important;
+        object-position: center top !important;
+      }
+      .steering-card.participant-card .card-front > div:nth-child(2) {
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .steering-card.participant-card .card-front-label-wrap {
+        margin-top: auto !important;
+        margin-bottom: 4px !important;
+        padding-bottom: 0 !important;
+      }
+      .team-content { max-width: 1400px !important; }
+      .team-cards-main { flex-direction: row !important; flex-wrap: nowrap !important; justify-content: center !important; }
       .team-card .team-name { text-align: center !important; }
+      .team-cards-new {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+        flex-wrap: unset !important;
+        justify-content: stretch !important;
+        align-items: stretch !important;
+      }
+      .team-card-new {
+        flex: unset !important;
+        max-width: none !important;
+        width: 100% !important;
+      }
+      .team-card-new .team-name h2 { font-size: 20px !important; }
+      .team-card-new .team-bio p { font-size: 14px !important; line-height: 1.65 !important; }
       .team-card-hadas { order: 1 !important; }
       .team-card-masha { order: 2 !important; }
+    }
+    @media (min-width: 901px) and (max-width: 1100px) {
+      .team-cards-new { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
     }
   </style>
 </head>
@@ -213,6 +507,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=30"></script>
+  <script src="script.js?v=69"></script>
 </body>
 </html>

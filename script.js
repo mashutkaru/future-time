@@ -27,13 +27,12 @@
   const PARTICIPANTS = [
     { id:1,  key:"Avishay_Cohen",            nameEn:"Avishay Cohen",            nameJa:"コーヘン・アヴィシャイ",             nameHe:"אבישי כהן",            sector:"Central Government", org:"Ministry of Labor",                     orgHe:"משרד העבודה",                     role:"Director, Multi-Generational Employment Dept.", roleHe:"מנהל אגף תעסוקה רב-דורית",            email:"cohan.avishay@gmail.com" },
     { id:2,  key:"Avital_Simcha_Shlezinger", nameEn:"Avital Simcha Shlezinger", nameJa:"シュレジンガー・アヴィタル・シムハ", nameHe:"אביטל שמחה שלזינגר",  sector:"Central Government", org:"National Insurance Institute",          orgHe:"המוסד לביטוח לאומי",              role:"Head, Senior Citizen & Family Advisory Div.",  roleHe:"מנהלת אגף הייעוץ לאזרח הוותיק",       email:"avitals@nioi.gov.il" },
-    { id:3,  key:"Gal_Gez_Nave",             nameEn:"Gal Gez Nave",             nameJa:"ナヴェ・ガル・ゲズ",               nameHe:"גלי גז נווה",          sector:"Central Government", org:"National Insurance Institute",          orgHe:"המוסד לביטוח לאומי",              role:"Manager of Social Services",                   roleHe:"מנהלת השירות הסוציאלי",               email:"galigez@nioi.gov.il" },
     { id:4,  key:"Idit_Ayala_Reiss",         nameEn:"Idit Ayala Reiss",         nameJa:"ライス・イディット・アヤラ",         nameHe:"עידית אילה ריס",       sector:"Central Government", org:"Ministry of Justice",                  orgHe:"משרד המשפטים",                    role:"Adv., Office of Legal Counsel and Legislative Affairs", roleHe:"עו״ד ייעוץ וחקיקה",                 email:"iditna@justice.gov.il" },
-    { id:5,  key:"Jasmin_Vulej",             nameEn:"Jasmin Vulej",             nameJa:"ヴレイ・ジャスミン",               nameHe:"יסמין וולג'י",         sector:"Central Government", org:"Ministry of Social Affairs",            orgHe:"משרד הרווחה",                     role:"Head of Model Development Unit",               roleHe:"מנהלת יחידת פיתוח מודלים",           email:"jasminv@molsa.gov.il" },
+    { id:5,  key:"Jasmin_Vulej",             nameEn:"Jasmin Vulej",             nameJa:"ヴレイ・ジャスミン",               nameHe:"יסמין וולג'י",         sector:"Central Government", org:"The Ministry of Welfare and Social Affairs",            orgHe:"משרד הרווחה",                     role:"Head of Model Development Unit",               roleHe:"מנהלת יחידת פיתוח מודלים",           email:"jasminv@molsa.gov.il" },
     { id:6,  key:"Liat_Stark",               nameEn:"Liat Stark",               nameJa:"スターク・リアット",               nameHe:"ליאת שטרק",            sector:"Central Government", org:"Ministry of Justice",                  orgHe:"משרד המשפטים",                    role:"District Director, Guardian General",          roleHe:"מנהלת מחוז ירושלים אפוטרופוס כללי",  email:"liatsta@justice.gov.il" },
     { id:7,  key:"Lior_Zohar",               nameEn:"Lior Zohar",               nameJa:"ゾハル・リオール",                 nameHe:"ליאור זוהר",            sector:"Central Government", org:"Ministry of Finance",                  orgHe:"משרד האוצר",                      role:"Head of Strategy and Pension Consultation Dept.", roleHe:"מנהלת תחום אסטרטגיה וייעוץ פנסיוני", email:"liork@mof.gov.il" },
     { id:8,  key:"Rachela_Akuka",            nameEn:"Rachela Akuka",            nameJa:"アクカ・ラヘラ",                   nameHe:"רחלה אקוקה",            sector:"Central Government", org:"Tax Authority",                        orgHe:"רשות המיסים",                     role:"Head Muster",                                  roleHe:"מנהלת מחלקת שומה",                   email:"akuka720@gmail.com" },
-    { id:9,  key:"Ravit_Nakar_El-Ezra",      nameEn:"Ravit Nakar El-Ezra",      nameJa:"ナカル・エルエズラ・ラヴィット",     nameHe:"רוית נקר אל-עזרא",    sector:"Central Government", org:"Ministry of Welfare and Social Security", orgHe:"משרד הרווחה והביטחון החברתי",    role:"Senior Manager, Budgeting and Pricing, Senior Citizens Administration", roleHe:"מנהלת בכירה תקצוב ותמחור אגף אזרחים ותיקים", email:"ravitn@molsa.gov.il" },
+    { id:9,  key:"Ravit_Nakar_El-Ezra",      nameEn:"Ravit Nakar El-Ezra",      nameJa:"ナカル・エルエズラ・ラヴィット",     nameHe:"רוית נקר אל-עזרא",    sector:"Central Government", org:"The Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי",    role:"Senior Manager, Budgeting and Pricing, Senior Citizens Administration", roleHe:"מנהלת בכירה תקצוב ותמחור אגף אזרחים ותיקים", email:"ravitn@molsa.gov.il" },
     { id:10, key:"Roei_Rafael_Babai",        nameEn:"Roei Rafael Babai",        nameJa:"ババイ・ロエイ・ラファエル",         nameHe:"רועי רפאל בבאי",       sector:"Central Government", org:"Ministry of Finance",                  orgHe:"משרד האוצר",                      role:"National Social Insurance Referent, Budget Dept.", roleHe:"רפרנט ביטוח לאומי, אגף התקציבים", email:"roeib@mof.gov.il" },
     { id:11, key:"Ronit_Rozin",              nameEn:"Ronit Rozin",              nameJa:"ロジン・ロニット",                 nameHe:"רונית רוזין",           sector:"Central Government", org:"Prime Minister Office",                orgHe:"משרד ראש הממשלה",                 role:"CEO Holocaust Survivors Authority",            roleHe:"מנכ״לית הרשות לניצולי שואה",         email:"ronitro@hsa.gov.il" },
     { id:12, key:"Valentina_Batia_Chai",     nameEn:"Valentina Batia Chai",     nameJa:"ハイ・ヴァレンティナ・バティア",     nameHe:"ולנטינה בתיה חי",       sector:"Central Government", org:"National Insurance Institute",          orgHe:"המוסד לביטוח לאומי",              role:"Branch Manager",                             roleHe:"מנהלת סניף",                           email:"valic1110@gmail.com" },
@@ -54,8 +53,17 @@
     { id:27, key:"Omer_Ungar",               nameEn:"Omer Ungar",               nameJa:"ウンガル・オメル",                 nameHe:"עומר אונגר",            sector:"Local Government",   org:"Ashdod Municipality",                  orgHe:"עיריית אשדוד",                    role:"Social Services Director",                     roleHe:"מנהל אגף שירותים חברתיים",            email:"omer@ashdod.muni.il" },
     { id:28, key:"Shirli_Reznizky_Kahan",    nameEn:"Shirli Reznizky Kahan",    nameJa:"カハン・シルリ",                   nameHe:"שירלי רזניצקי כהן",    sector:"Academia & Research", org:"Myers JDC Brookdale Institute",        orgHe:"מכון מאיירס-ג'וינט-ברוקדייל",    role:"Senior Research Scholar and Aging Team Leader", roleHe:"חוקרת בכירה וראש צוות הזדקנות",    email:"shirlir@jdc.org" },
     { id:29, key:"Shmuel_Springer",          nameEn:"Shmuel Springer",          nameJa:"スプリンガー・シュムエル",           nameHe:"שמואל שפרינגר",         sector:"Academia & Research", org:"Ariel University",                      orgHe:"אוניברסיטת אריאל",                role:"Head Academic Community Partnership Unit",     roleHe:"ראש יחידת קשרי אקדמיה קהילה",       email:"shmuels@ariel.ac.il" },
-    { id:30, key:"Meital_Weissman_Tsabari",  nameEn:"Meital Weissman Tsabari",  nameJa:"メイタル・ワイスマン・ツァバリ",     nameHe:"מיטל ויסמן צברי",     sector:"Central Government",   org:"Ministry of Social Affairs and Services",        orgHe:"משרד הרווחה והשירותים החברתיים",    role:"Head of knowledge management field, policy planning and strategy", roleHe:"מנהלת תחום, אגף תכנון מדיניות",     email:"meitalit80@gmail.com" },
+    { id:30, key:"Meital_Weissman_Tsabari",  nameEn:"Meital Weissman Tsabari",  nameJa:"メイタル・ワイスマン・ツァバリ",     nameHe:"מיטל ויסמן צברי",     sector:"Central Government",   org:"The Ministry of Welfare and Social Affairs",        orgHe:"משרד הרווחה והשירותים החברתיים",    role:"Head of knowledge management field, policy planning and strategy", roleHe:"מנהלת תחום, אגף תכנון מדיניות",     email:"meitalit80@gmail.com" },
   ];
+
+  const STEERING_COMMITTEE = [
+    { id:"sc1", key:"Oriel_Chazum", nameEn:"Oriel Chazum", nameJa:"ウリエル・カズム", nameHe:"אוריאל כזום", org:"National Insurance Institute", orgHe:"המוסד לביטוח לאומי", role:"Deputy Director General of Subsistence Benefits, Employment, and Senior Citizens Pensions", roleHe:"סגן מנכ״ל תחום קצבאות קיום, תעסוקה ופנסיות לאזרחים ותיקים", email:"urielc@nioi.gov.il", photo:"Oriel_Chazum.png" },
+    { id:"sc2", key:"Yariv_Man", nameEn:"Yariv Man", nameJa:"ヤリヴ・マン", nameHe:"יריב מן", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Deputy Director General, Administration for Senior Citizens", roleHe:"סגן מנהל האגף לאזרחים ותיקים", email:"YarivM@molsa.gov.il", photo:"Yariv_Man.png" },
+    { id:"sc3", key:"Hama_Israeli", nameEn:"Hama Israeli", nameJa:"ハマ・イスラエリ", nameHe:"חמא ישראלי", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Senior Division Manager, Housing Systems for Senior Citizens", roleHe:"מנהלת בכירה, מערכות דיור לאזרחים ותיקים", email:"hamai@molsa.gov.il", photo:"Hama_Israeli.png" },
+    { id:"sc4", key:"Yafit_Bar", nameEn:"Yafit Bar", nameJa:"ヤフィット・バル", nameHe:"יפית בר", org:"Ministry for Social Equality and the Advancement of the Status of Women", orgHe:"משרד לשוויון חברתי ולקידום מעמד האישה", role:"Director of Employment and Rights for Seniors", roleHe:"מנהלת תחום תעסוקה וזכויות לאזרחים ותיקים", email:"yafitba@mse.gov.il", photo:"Yafit_Bar.png" },
+  ];
+  var STEERING_BADGE = "Steering Committee";
+  var STEERING_PHOTO_VER = 3;
 
   const SECTORS = [
     { key:"all",                 label:"All Sectors",        short:"Total",    icon:"👥" },
@@ -66,13 +74,13 @@
     { key:"Academia & Research", label:"Academia & Research", short:"Academia & Research", icon:"🎓" },
   ];
 
-  var PRIMARY = '#19258B';
-  var ACCENT = { cyan:'#4BC0D9', green:'#7ED321', yellow:'#FFDE40', orange:'#FF6E7B' };
+  var P = { dark:'#214F63', hero:'#3E788C', mid:'#4D8796', soft:'#7EA7B5', pale:'#CEDDE2', text:'#214F63', nav:'#214F63' };
+  var PRIMARY = P.dark;
   const SC = {
-    "all":                 { bg:"#5b5484", light:"#C0C8D5", border:"#8b92a8", text:"#3d3a5c" },
+    "all":                 { bg:P.nav, light:P.pale, border:P.nav, text:"#ffffff" },
     "Central Government":  { bg:"#6b6590", light:"#CFCBE1", border:"#8b85a8", text:"#3d3a5c" },
     "Local Government":    { bg:"#8a7572", light:"#DACFCD", border:"#9a9090", text:"#3d3a5c" },
-    "Healthcare System":       { bg:"#5783CB", light:"#C0C8D5", border:"#6b9bd4", text:"#3d3a5c" },
+    "Healthcare System":   { bg:"#5783CB", light:"#C0C8D5", border:"#6b9bd4", text:"#3d3a5c" },
     "Civil Society":       { bg:"#5a7a4a", light:"#F0F3DE", border:"#9ba88e", text:"#3d3a5c" },
     "Academia & Research": { bg:"#755EE6", light:"#F3E8FF", border:"#a78bfa", text:"#3d3a5c" },
   };
@@ -165,12 +173,12 @@
         '<li style="margin:0 0 6px">政府機関および政策立案機関</li>' +
         '<li style="margin:0">イノベーション拠点、投資機関、および高齢化関連テクノロジー分野</li>' +
       '</ul>';
-    var goalBoxStyle = 'background:rgba(255,255,255,0.1);border-radius:12px;padding:18px 20px;border-left:4px solid #FFD700;margin-bottom:12px';
+    var goalBoxStyle = 'background:rgba(255,255,255,0.1);border-radius:12px;padding:18px 20px;border-left:4px solid '+P.soft+';margin-bottom:12px';
     var goalsEnHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleEn+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descEn+'</div></div>'; }).join('');
     var goalsJaHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleJa+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descJa+'</div></div>'; }).join('');
 
-    container.innerHTML = '<div style="min-height:100vh;background:#e5e7eb">' +
-      '<div class="about-banner" style="background:#2a2d71;width:100%;overflow:hidden">' +
+    container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
+      '<div class="about-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
         '<div style="padding:48px 24px;text-align:center"><div style="display:flex;align-items:center;justify-content:center;gap:14px"><img src="images/just_the_round_logo.png" alt="Future Time" style="height:54px;width:auto;display:block" /><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Future Time Program</h1></div></div>' +
       '</div>' +
       '<div class="about-content">' +
@@ -188,16 +196,21 @@
         '</div>' +
         '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15)">' +
           '<div class="about-grid" style="margin-bottom:28px">' +
-            '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">OBJECTIVES &amp; GOALS</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">Program Objective</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">To establish a network of <strong>30 senior leaders</strong> from diverse sectors, working together to promote optimal aging in Israel in the era of 100-year lives.</p></div>' +
-            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">目的及目標</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">プログラムの目的</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">多様な分野で活躍する30名のリーダーによるネットワークを形成し、100年時代におけるイスラエルの最適な高齢化(Optimal Aging)の推進を目指します。</p></div>' +
+            '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">OBJECTIVES &amp; GOALS</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">Program Objective</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">To establish a network of <strong>29 senior leaders</strong> from diverse sectors, working together to promote optimal aging in Israel in the era of 100-year lives.</p></div>' +
+            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">目的及目標</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">プログラムの目的</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">多様な分野で活躍する29名のリーダーによるネットワークを形成し、100年時代におけるイスラエルの最適な高齢化(Optimal Aging)の推進を目指します。</p></div>' +
           '</div>' +
           '<div class="about-grid">' +
             '<div style="min-width:0;flex:1"><div style="font-weight:800;font-size:16px;margin-bottom:12px">Program Goals</div>'+goalsEnHtml+'</div>' +
             '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:800;font-size:16px;margin-bottom:12px">プログラムの目標</div>'+goalsJaHtml+'</div>' +
           '</div>' +
         '</div>' +
-        '<section class="about-cta" style="margin-top:40px;text-align:center">' +
-          '<button id="cta-participants" style="background:#fecf17;color:#2a2d71;border:none;border-radius:14px;padding:16px 40px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 4px 18px rgba(0,0,0,0.2)">👥 Meet the 30 Participants →</button>' +
+        '<section class="about-group-image" style="margin-top:36px">' +
+          '<div style="background:'+P.dark+';border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12)">' +
+            '<img src="'+PHOTO_DIR+'Group_image.jpeg" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
+          '</div>' +
+        '</section>' +
+        '<section class="about-cta" style="margin-top:24px;text-align:center">' +
+          '<button id="cta-participants" style="background:'+P.pale+';color:'+P.dark+';border:none;border-radius:14px;padding:16px 40px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 4px 18px rgba(0,0,0,0.2)">👥 Meet the 29 Participants →</button>' +
         '</section>' +
       '</div></div>';
 
@@ -218,27 +231,82 @@
       "She teaches at leading universities in Japan and Israel, including Kyoto University, Doshisha University, Ritsumeikan University, and the University of Haifa. Alongside her academic work, she has led numerous cross-cultural initiatives connecting students, researchers, and professionals from different countries.",
       "Living in Japan for over a decade, Hadas engages with the country not only as a scholar but also through everyday life. Fluent in Japanese and deeply immersed in the culture, she continuously explores Japan's institutions, communities, traditions, arts, and landscapes. Her curiosity about the \"Land of the Rising Sun\" fuels her work and shapes the learning experiences she designs for others."
     ];
-    var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:#475569';
+    var hadasBarzilaiPars = [
+      "Hadas Barzilai directs the \"FutureTime\" program at Joint-ELKA, fostering cross-sector collaboration to improve the efficiency and effectiveness of systems and organizations, with the aim of enhancing quality of life for Israeli citizens.",
+      "In her previous roles at ELKA, Hadas contributed to developing the Regional Clusters Initiative. She worked closely with the Eastern Negev regional authorities cluster, establishing and leading a forum for local authority heads, a welfare forum, and a multi-sector leadership program. These efforts culminated in a strategic regional economic development plan for the Eastern Negev.",
+      "Before joining ELKA, Hadas founded and managed a nonprofit organization dedicated to advancing equality and social justice. Under her leadership, the organization increased public awareness of social rights, provided the tools needed to exercise those rights, and encouraged active civic engagement to influence decision-making processes affecting citizens' quality of life. She led the organization's southern branch for 17 years.",
+      "Hadas holds a Master of Social Work (Administration and Welfare Policy track) and a Bachelor of Social Work, both earned cum laude at Ben-Gurion University."
+    ];
+    var sigalPars = [
+      "Sigal Mautner Siebzehner is an organizational consultant and group facilitator with more than 20 years of experience in organizational, personal, and professional development. At ELKA, she has played a key role in designing and managing initiatives led by senior executives and experts from government ministries, local authorities, and civil society organizations.",
+      "Previously, Sigal directed the Women's Empowerment Unit at the Israel Association of Community Centers, overseeing leadership programs for thousands of women nationwide. She also served as Director of the \"Youth for Youth\" Association, managed the training department at MATI (Small Business Development Center), and worked as a senior organizational consultant in leading consulting firms.",
+      "In these roles, she guided senior management teams, led processes in organizations across multiple sectors, and developed training programs for managers and multi-professional teams. Over the years, Sigal has lectured and facilitated workshops in various academic contexts.",
+      "She holds an M.Sc. in Organizational Behavior from Tel Aviv University, is a certified trainer with a certificate in group facilitation from the Zippory Center, and has a certificate in psychotherapy studies from the Temurot School of Dynamic Psychotherapy at Bar-Ilan University."
+    ];
+    var yuvalPars = [
+      "Yuval Golani leads the operations and logistics of the \"FutureTime\" program. In her previous roles at ELKA, she worked with regional municipal clusters to build mechanisms and strengthen capacities for delivering high-quality social services, leading cross-sector collaborations with the Ministry of Health, the Ministry of Interior, and the Ministry of Welfare and Social Services.",
+      "Prior to that, Yuval served as Assistant Spokesperson in the Media, Communication and Advocacy Division at the Ministry of Energy and Infrastructure. Alongside her work, she actively volunteers in social organizations working to reduce social inequality.",
+      "Yuval holds a BA in Political Science and International Relations from the Hebrew University of Jerusalem."
+    ];
+    var talPars = [
+      "Tal Miles is the Director of National Public System Network Initiatives at JDC Elka, where she leads large-scale collaborations and cross-sector partnerships to strengthen public systems and address complex societal challenges. Working closely with leaders across central and local government, civil society, and professional networks, she designs and implements initiatives that translate collaboration into meaningful, lasting change in the public sector.",
+      "Prior to this role, Tal served as CEO of the Israel Green Building Council, where she led national efforts to advance sustainable urban development. Partnering with government decision-makers, municipalities, industry, and civil society, she promoted policies and practices that integrate environmental, social, and economic sustainability. Earlier, she held senior leadership positions at the Council, including VP of Operations and Training.",
+      "Beyond her formal roles, Tal is an active community entrepreneur and a dedicated advocate for the inclusion of people with special needs.",
+      "Tal holds a BA in Community Coordination from the Open University and Beit Berl College, and an MA in Mediation and Conflict Resolution from Tel Aviv University."
+    ];
+    var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:'+P.mid+'';
     var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var hadasBioHtml = hadasPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
-    var cardStyle = 'background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);max-width:560px';
+    var hadasBarzilaiBioHtml = hadasBarzilaiPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var sigalBioHtml = sigalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var yuvalBioHtml = yuvalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var talBioHtml = talPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var photoStyle = 'width:100%;height:280px;object-fit:contain;object-position:center center';
-    container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
-      '<div class="team-content">' +
-        '<h1 style="font-size:36px;font-weight:800;color:#19258B;margin:0 0 48px;text-align:center">Meet the Team</h1>' +
-        '<div class="team-cards" style="display:flex;flex-wrap:wrap;justify-content:center;gap:48px">' +
-          '<div class="team-card team-card-masha" style="'+cardStyle+'">' +
-            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Masha Robeen</h2></div>' +
+    var teamBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px';
+    container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
+      '<div class="about-banner team-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
+        '<div style="padding:48px 24px;text-align:center"><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Meet the Team</h1></div>' +
+      '</div>' +
+      '<div class="about-content team-content">' +
+        '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +
+          '<h2 class="team-section-title">Delegation Organizers</h2>' +
+          '<div class="team-cards team-cards-main">' +
+          '<div class="team-card team-card-masha">' +
+            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Masha Robeen</h2></div>' +
             '<div class="team-photo" style="padding:0 24px 24px;background:#fff"><img src="'+PHOTO_DIR+'Masha_Robeen.png" alt="Masha Robeen" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 32px 32px 28px">'+mashaBioHtml+'</div>' +
           '</div>' +
-          '<div class="team-card team-card-hadas" style="'+cardStyle+'">' +
-            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0f172a">Dr. Hadas Kushelevich</h2></div>' +
+          '<div class="team-card team-card-hadas">' +
+            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Dr. Hadas Kushelevich</h2></div>' +
             '<div class="team-photo" style="padding:0 24px 24px;background:#fff"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
             '<div class="team-bio" style="padding:0 32px 32px 28px">'+hadasBioHtml+'</div>' +
           '</div>' +
-        '</div></div></div>';
-    var teamCards = container.querySelector('.team-cards');
+        '</div></div>' +
+        '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +
+          '<h2 class="team-section-title">Future Time Program Team</h2>' +
+        '<div class="team-cards team-cards-new">' +
+          '<div class="team-card team-card-hadas-barzilai team-card-new">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Hadas Barzilai</h2></div>' +
+            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Hadas_Barzilai.jpg" alt="Hadas Barzilai" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+hadasBarzilaiBioHtml+'</div>' +
+          '</div>' +
+          '<div class="team-card team-card-sigal team-card-new">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Sigal Mautner Siebzehner</h2></div>' +
+            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Sigal_Mautner_Sievzehner.jpeg" alt="Sigal Mautner Siebzehner" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+sigalBioHtml+'</div>' +
+          '</div>' +
+          '<div class="team-card team-card-yuval team-card-new">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Yuval Golani</h2></div>' +
+            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Yuval_Golani.jpeg?v=3" alt="Yuval Golani" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Coordinator, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+yuvalBioHtml+'</div>' +
+          '</div>' +
+          '<div class="team-card team-card-tal team-card-new">' +
+            '<div class="team-name" style="padding:24px 24px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:'+P.dark+'">Tal Miles</h2></div>' +
+            '<div class="team-photo" style="padding:0 20px 20px;background:#fff"><img src="'+PHOTO_DIR+'Tal_Miles.png" alt="Tal Miles" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:0 24px 28px 24px"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, National Public System Network Initiatives</strong><br/>Joint-ELKA</p>'+talBioHtml+'</div>' +
+          '</div>' +
+        '</div></div></div></div>';
+    var teamCards = container.querySelector('.team-cards-main');
     var mashaCard = container.querySelector('.team-card-masha');
     var hadasCard = container.querySelector('.team-card-hadas');
     if (teamCards && mashaCard && hadasCard && hadasCard.previousElementSibling !== mashaCard) {
@@ -246,17 +314,82 @@
     }
   }
 
+  function steeringPhotoHtml(m) {
+    var nameEn = escapeHtml(m.nameEn);
+    if (m.photo) {
+      var photoSrc = PHOTO_DIR + m.photo + '?v=' + (m.photoVer != null ? m.photoVer : STEERING_PHOTO_VER);
+      return '<img src="'+photoSrc+'" alt="'+nameEn+'" loading="lazy" decoding="async"/>';
+    }
+    var initials = m.nameEn.split(/\s+/).map(function (w) { return w.charAt(0); }).join('').slice(0, 2).toUpperCase();
+    return '<div class="steering-photo-placeholder" aria-hidden="true" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:'+P.pale+';color:'+P.dark+';font-size:42px;font-weight:800">'+initials+'</div>';
+  }
+
+  function renderSteeringCard(m) {
+    var c = { bg:P.hero, border:P.hero, light:P.pale, text:'#ffffff' };
+    var nameEn = escapeHtml(m.nameEn);
+    var nameJa = escapeHtml(m.nameJa || '');
+    var nameHe = escapeHtml(m.nameHe || '');
+    var nameJaHtml = nameJa ? '<div style="font-size:13px;color:'+P.mid+';opacity:0.9">'+nameJa+'</div>' : '';
+    var nameJaBackHtml = nameJa ? '<div style="font-size:12px;opacity:0.82">'+nameJa+'</div>' : '';
+    var nameHeHtml = nameHe ? '<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+P.mid+'">'+nameHe+'</div>' : '';
+    var org = escapeHtml(m.org);
+    var orgHe = escapeHtml(m.orgHe || '');
+    var role = escapeHtml(m.role);
+    var roleHe = escapeHtml(m.roleHe || '');
+    var email = escapeHtml(m.email);
+    var photoInner = '<div class="steering-photo-inner">'+steeringPhotoHtml(m)+'</div>';
+    return '<div class="steering-card participant-card" data-steering-id="'+m.id+'" style="perspective:900px;cursor:pointer">' +
+      '<div class="card-inner" style="transition:transform 0.55s">' +
+        '<div class="card-front" style="background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
+          '<div class="card-photo-wrap">'+photoInner+'</div>' +
+          '<div class="card-info">' +
+            '<div class="card-front-names" style="display:flex;flex-direction:column;gap:4px"><div style="font-weight:800;font-size:16px;color:'+P.dark+'">'+nameEn+'</div>'+nameJaHtml+nameHeHtml+
+            '<div class="card-front-org" style="font-size:12px;font-weight:600;color:'+P.text+';margin-top:2px">'+role+'</div>' +
+            '<div class="card-org" style="font-size:12px;margin:0">'+org+'</div></div>' +
+            '<div class="card-front-label-wrap"><div style="background:'+c.bg+';color:white;font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px">'+STEERING_BADGE+'</div></div>' +
+          '</div>' +
+          '<div class="view-details">View Details</div>' +
+        '</div>' +
+        '<div class="card-back" style="position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;overflow:hidden">' +
+          '<div style="text-align:center;padding:12px 0 8px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+(nameHe ? '<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div>' : '')+'</div>' +
+          '<div style="height:1px;background:rgba(255,255,255,0.25)"></div>' +
+          '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px;font-size:13px"><div><strong>'+org+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+orgHe+'</span></div>' +
+          '<div style="margin-top:8px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+roleHe+'</span></div>' +
+          '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
+          '<div style="text-align:center;font-size:10px;opacity:0.5;padding-top:4px">TAP TO FLIP BACK</div>' +
+        '</div>' +
+      '</div></div>';
+  }
+
+
+  function initSteeringCarousel(container) {
+    var carousel = container.querySelector('.steering-carousel');
+    if (!carousel || carousel.getAttribute('data-ready') === '1') return;
+    carousel.setAttribute('data-ready', '1');
+    var track = carousel.querySelector('.steering-carousel-track');
+    var prev = carousel.querySelector('.steering-carousel-prev');
+    var next = carousel.querySelector('.steering-carousel-next');
+    if (!track || !prev || !next) return;
+    function scrollStep(dir) {
+      var card = track.querySelector('.steering-card');
+      var amount = card ? card.offsetWidth + 16 : 296;
+      track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    }
+    prev.addEventListener('click', function () { scrollStep(-1); });
+    next.addEventListener('click', function () { scrollStep(1); });
+  }
+
   function sectorBadge(sector) {
-    var c = SC[sector] || { light:"#f1f5f9", text:"#475569", border:"#cbd5e1" };
+    var c = SC[sector] || { light:"#f1f5f9", text:"#3d3a5c", border:"#cbd5e1" };
     return '<span style="background:'+c.light+';color:'+c.text+';border:1.5px solid '+c.border+';font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px">'+escapeHtml(sector)+'</span>';
   }
   function renderParticipantCard(p) {
-    var c = SC[p.sector] || { bg:"#334155", border:"#64748b", light:"#f1f5f9" };
+    var c = SC[p.sector] || { bg:"#334155", border:"#64748b", light:"#f1f5f9", text:"#3d3a5c" };
     var initial = p.nameEn.charAt(0);
     var nameEn = escapeHtml(p.nameEn);
     var nameJa = escapeHtml(p.nameJa || '');
     var nameHe = escapeHtml(p.nameHe);
-    var nameJaHtml = nameJa ? '<div style="font-size:13px;color:'+(c.text||'#475569')+';opacity:0.9">'+nameJa+'</div>' : '';
+    var nameJaHtml = nameJa ? '<div style="font-size:13px;color:'+(c.text||P.mid)+';opacity:0.9">'+nameJa+'</div>' : '';
     var nameJaBackHtml = nameJa ? '<div style="font-size:12px;opacity:0.82">'+nameJa+'</div>' : '';
     var org = escapeHtml(p.org);
     var orgLine2 = (p.orgLine2 && p.orgLine2.trim()) ? '<br/>' + escapeHtml(p.orgLine2) : '';
@@ -270,8 +403,8 @@
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
           '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;display:flex;align-items:stretch;justify-content:stretch">'+photoHtml+'</div>' +
-          '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+(c.light||c.bg)+';color:'+(c.text||'#334155')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
-            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0f172a')+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#475569')+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||'#334155')+';margin-top:4px">'+org+orgLine2+'</div></div>' +
+          '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+P.pale+';color:'+(c.text||P.text)+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
+            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:4px"><div style="font-weight:800;font-size:16px;color:'+(c.text||P.dark)+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||P.mid)+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||P.text)+';margin-top:4px">'+org+orgLine2+'</div></div>' +
             '<div class="card-front-label-wrap" style="display:flex;align-items:center;justify-content:center;min-height:0;margin-top:2px"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
           '</div>' +
           '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">View Details</div>' +
@@ -281,7 +414,7 @@
           '<div style="height:1px;background:rgba(255,255,255,0.25);flex-shrink:0"></div>' +
           '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px"><div style="font-size:13px"><strong>'+org+orgLine2+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+orgHe+'</span></div>' +
           '<div style="margin-top:8px;font-size:13px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+roleHe+'</span></div>' +
-          '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:#a5b4fc" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
+          '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
           '<div style="text-align:center;font-size:10px;opacity:0.5;flex-shrink:0;padding-top:4px">TAP TO FLIP BACK</div>' +
         '</div>' +
       '</div></div>';
@@ -292,29 +425,49 @@
     var filtered = filterParticipants(activeSector, search);
 
     var statsHtml = SECTORS.map(function(s){
-      var c = SC[s.key] || { bg:"#081679", border:"#3d4fcc", light:"#dde1f5", text:"#081679" };
+      var c = SC[s.key] || { bg:P.nav, border:P.nav, light:P.pale, text:"#ffffff" };
       var isActive = activeSector === s.key;
-      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+(isActive?c.bg:'white')+';border:2px solid '+(isActive?c.border:(c.border||'#cbd5e1'))+';color:'+(isActive?'white':'#3d3a5c')+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
+      var btnBg = isActive ? (s.key === 'all' ? P.nav : c.bg) : 'white';
+      var btnColor = isActive ? 'white' : P.text;
+      var btnBorder = isActive ? (s.key === 'all' ? P.nav : c.border) : (c.border || P.soft);
+      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+btnBg+';border:2px solid '+btnBorder+';color:'+btnColor+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
     }).join('');
+
+    var steeringBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:32px';
+    var steeringCardsHtml = STEERING_COMMITTEE.map(renderSteeringCard).join('');
+    var steeringSectionHtml =
+      '<section class="steering-section">' +
+        '<h2 class="all-participants-title steering-section-heading">Steering Committee</h2>' +
+        '<div class="about-box steering-section-box" style="'+steeringBoxStyle+'">' +
+          '<div class="steering-carousel">' +
+            '<button type="button" class="steering-carousel-prev" aria-label="Previous steering committee member">&lt;</button>' +
+            '<button type="button" class="steering-carousel-next" aria-label="Next steering committee member">&gt;</button>' +
+            '<div class="steering-carousel-track">'+steeringCardsHtml+'</div>' +
+          '</div>' +
+        '</div>' +
+      '</section>';
 
     var searchRow = container.querySelector('.search-row');
     var cardsContainer = container.querySelector('#cards-container');
     var isEmpty = container.querySelector('.participants-empty');
 
     if (!searchRow) {
-      container.innerHTML = '<div style="min-height:100vh;background:#e8ecf8">' +
-        '<div class="participants-header-wrap" style="background:rgba(36,42,98,0.9);padding:28px 48px 24px;color:white;position:relative">' +
+      container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
+        '<div class="participants-header-wrap" style="background:'+P.hero+';padding:28px 48px 24px;color:white;position:relative">' +
           '<div style="max-width:1204px;margin:0 auto;display:flex;align-items:flex-start;justify-content:flex-start;gap:28px">' +
             '<div style="flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:6px 12px 0 0"><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:10px;justify-content:flex-start;line-height:1.1">Program Participants</h1><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Choose participants by affiliation label</p><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Search and filter all program participants across sectors</p></div>' +
             '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 640px;max-width:640px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>' +
           '</div>' +
         '</div>' +
         '<div class="participants-content">' +
-          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:6px;margin-bottom:6px;padding:6px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:0 1 420px;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid #e2e8f0;border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#f8fafc" /></div>' +
+          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:0;margin-bottom:6px;padding:4px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:0 1 420px;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid '+P.soft+';border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:white" /></div>' +
+          steeringSectionHtml +
+          '<section class="all-participants-section">' +
+          '<h2 class="all-participants-title" style="margin:0 0 16px;font-size:22px;font-weight:800;color:'+P.dark+'">All Participants</h2>' +
           '<div class="cards-grid" style="margin-top:4px;padding:4px 0" id="cards-container">' +
             filtered.map(renderParticipantCard).join('') +
-          '</div>' +
-          '<div class="participants-empty" style="display:none;text-align:center;padding:60px;color:#94a3b8"><div style="font-size:44px;margin-bottom:12px">🔍</div><div style="font-size:17px;font-weight:700">No participants found</div></div>' +
+          '</div></section>' +
+          '<div class="participants-empty" style="display:none;text-align:center;padding:60px;color:'+P.soft+'"><div style="font-size:44px;margin-bottom:12px">🔍</div><div style="font-size:17px;font-weight:700">No participants found</div></div>' +
         '</div></div>';
 
       var input = container.querySelector('#search-input');
@@ -324,6 +477,7 @@
       container.querySelectorAll('[data-sector]').forEach(function(btn){
         btn.onclick = function () { setActiveSector(btn.getAttribute('data-sector')); };
       });
+      initSteeringCarousel(container);
     } else {
       container.querySelector('#stats-bar').outerHTML = '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 640px;max-width:640px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>';
       cardsContainer = container.querySelector('#cards-container');
@@ -342,6 +496,7 @@
         inner.style.transform = inner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
       };
     });
+    initSteeringCarousel(container);
   }
 
   var state = { page: 'about', activeSector: 'all', search: '' };
