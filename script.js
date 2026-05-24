@@ -60,10 +60,10 @@
     { id:"sc1", key:"Yariv_Man", nameEn:"Yariv Man", nameJa:"ヤリヴ・マン", nameHe:"יריב מן", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Deputy Director General, Administration for Senior Citizens", roleHe:"סגן מנהל האגף לאזרחים ותיקים", email:"YarivM@molsa.gov.il", photo:"Yariv_Man.png" },
     { id:"sc2", key:"Hama_Israeli", nameEn:"Hama Israeli", nameJa:"ハマ・イスラエリ", nameHe:"חמא ישראלי", org:"Ministry of Welfare and Social Affairs", orgHe:"משרד הרווחה והביטחון החברתי", role:"Senior Division Manager, Housing Systems for Senior Citizens", roleHe:"מנהלת בכירה, מערכות דיור לאזרחים ותיקים", email:"hamai@molsa.gov.il", photo:"Hama_Israeli.png" },
     { id:"sc3", key:"Orit_Shachar", nameEn:"Orit Shahar", nameJa:"オリット・シャハル", nameHe:"אורית שחר", org:"JDC‑Eshel", orgHe:"ג'וינט ישראל – אשל", role:"Area Head Health and functioning for older adult", roleHe:"ראש תחום בריאות ותפקוד למבוגרים", email:"Orits@jdc.org", photo:"Orit_Shachar.jpg" },
-    { id:"sc4", key:"Oriel_Chazum", nameEn:"Oriel Chazum", nameJa:"ウリエル・カズム", nameHe:"אוריאל כזום", org:"National Insurance Institute", orgHe:"המוסד לביטוח לאומי", role:"Deputy Director General of Subsistence Benefits, Employment, and Senior Citizens Pensions", roleHe:"סגן מנכ״ל תחום קצבאות קיום, תעסוקה ופנסיות לאזרחים ותיקים", email:"urielc@nioi.gov.il", photo:"Oriel_Chazum.jpg" },
+    { id:"sc4", key:"Oriel_Chazum", nameEn:"Oriel Chazum", nameJa:"ウリエル・カズム", nameHe:"אוריאל כזום", org:"National Insurance Institute", orgHe:"המוסד לביטוח לאומי", role:"Deputy Director General of Subsistence Benefits, Employment, and Senior Citizens Pensions", roleHe:"סגן מנכ״ל תחום קצבאות קיום, תעסוקה ופנסיות לאזרחים ותיקים", email:"urielc@nioi.gov.il", photo:"Oriel_Chazum.png" },
   ];
   var STEERING_BADGE = "Steering Committee";
-  var STEERING_PHOTO_VER = 7;
+  var STEERING_PHOTO_VER = 9;
 
   const SECTORS = [
     { key:"all",                 label:"All Sectors",        short:"Total",    icon:"👥" },
@@ -166,11 +166,11 @@
       '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">本プログラムでは、日本における視察および専門家との交流に加え、イスラエル側参加者による講義・プレゼンテーションを実施し、双方向の知識および経験の共有を行う。この相互学習の枠組みを通じて、実質的な対話の促進と、協働・適応・共同イニシアティブの創出機会の特定を図る。</p>' +
       '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:white"><strong>視察団は、サービス提供の全体像を横断する多様な機関との連携を目指しており、主な訪問先は以下を想定している：</strong></p>' +
       '<ul style="margin:0 0 8px 18px;padding:0;color:white;font-size:14px;line-height:1.85">' +
-        '<li style="margin:0 0 6px">医療およびリハビリテーション（公的・民間）</li>' +
+        '<li style="margin:0 0 6px">公的デイケアおよびリハビリテーション制度</li>' +
         '<li style="margin:0 0 6px">地方自治体および広域行政モデル</li>' +
         '<li style="margin:0 0 6px">福祉サービスおよび地域支援体制</li>' +
         '<li style="margin:0 0 6px">多世代共生型コミュニティセンター</li>' +
-        '<li style="margin:0 0 6px">政府機関および政策立案機関</li>' +
+        '<li style="margin:0 0 6px">政府機関および政策フレームワーク</li>' +
         '<li style="margin:0">イノベーション拠点、投資機関、および高齢化関連テクノロジー分野</li>' +
       '</ul>';
     var goalBoxStyle = 'background:rgba(255,255,255,0.1);border-radius:12px;padding:18px 20px;border-left:4px solid '+P.soft+';margin-bottom:12px';
@@ -437,7 +437,7 @@
       var isActive = activeSector === s.key;
       var btnBg = isActive ? (s.key === 'all' ? P.nav : c.bg) : 'white';
       var btnColor = isActive ? 'white' : P.text;
-      var btnBorder = isActive ? (s.key === 'all' ? P.nav : c.border) : (c.border || P.soft);
+      var btnBorder = isActive ? (s.key === 'all' ? '#ffffff' : c.border) : (c.border || P.soft);
       return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+btnBg+';border:2px solid '+btnBorder+';color:'+btnColor+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
     }).join('');
 
