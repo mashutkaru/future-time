@@ -437,8 +437,10 @@
       var isActive = activeSector === s.key;
       var btnBg = isActive ? (s.key === 'all' ? P.nav : c.bg) : 'white';
       var btnColor = isActive ? 'white' : P.text;
-      var btnBorder = isActive ? (s.key === 'all' ? '#ffffff' : c.border) : (c.border || P.soft);
-      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+btnBg+';border:2px solid '+btnBorder+';color:'+btnColor+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
+      var btnBorder = isActive ? (s.key === 'all' ? 'rgba(255,255,255,0.4)' : c.border) : (c.border || P.soft);
+      var btnBorderW = isActive && s.key === 'all' ? '1.5px' : '2px';
+      var btnShadow = isActive && s.key === 'all' ? 'box-shadow:0 0 0 1px rgba(255,255,255,0.2);' : '';
+      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+btnBg+';border:'+btnBorderW+' solid '+btnBorder+';color:'+btnColor+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible;'+btnShadow+'"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
     }).join('');
 
     var steeringBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:32px';
