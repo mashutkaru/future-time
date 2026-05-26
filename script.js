@@ -274,11 +274,13 @@
             '<div class="team-name"><h2>Masha Robeen</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Masha_Robeen.png?v=3" alt="Masha Robeen"></div>' +
             '<div class="team-bio">'+mashaBioHtml+'</div>' +
+            '<div class="team-card-logo"><img src="images/JIAT_logo.png?v=2" alt="Japan Israel Aging Tech Association (JIAT)"></div>' +
           '</div>' +
           '<div class="team-card team-card-hadas">' +
             '<div class="team-name"><h2>Dr. Hadas Kushelevich</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png?v=2" alt="Dr. Hadas Kushelevich"></div>' +
             '<div class="team-bio">'+hadasBioHtml+'</div>' +
+            '<div class="team-card-logo"><img src="images/IJAC_logo.png?v=1" alt="International Journal of Arts and Commerce (IJAC)"></div>' +
           '</div>' +
         '</div></div>' +
         '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +

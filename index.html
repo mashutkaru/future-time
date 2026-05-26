@@ -292,6 +292,38 @@
       border-radius: 10px;
     }
     .team-card .team-bio { flex: 1 1 auto; }
+    .team-card-logo {
+      margin-top: auto;
+      padding-top: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .team-card-logo img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 72px;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+    }
+    .team-cards-main .team-card-logo {
+      padding-top: 24px;
+      align-items: flex-end;
+      justify-content: center;
+      min-height: 72px;
+    }
+    .team-cards-main .team-card-logo img {
+      max-height: 56px;
+      max-width: 260px;
+      width: auto;
+    }
+    .team-card-masha .team-card-logo img {
+      transform: translateY(-8px);
+    }
     /* Participants header typography */
     .participants-header-wrap, .participants-header-wrap * { font-family: 'Inter', sans-serif !important; }
     .stats-bar-wrap { bottom: auto !important; }
@@ -581,6 +613,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=92"></script>
+  <script src="script.js?v=94"></script>
 </body>
 </html>
