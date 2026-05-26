@@ -280,7 +280,7 @@
             '<div class="team-name"><h2>Dr. Hadas Kushelevich</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png?v=2" alt="Dr. Hadas Kushelevich"></div>' +
             '<div class="team-bio">'+hadasBioHtml+'</div>' +
-            '<div class="team-card-logo"><img src="images/IJAC_logo.png?v=1" alt="International Journal of Arts and Commerce (IJAC)"></div>' +
+            '<div class="team-card-logo"><img src="images/IJAC_logo.png?v=2" alt="International Journal of Arts and Commerce (IJAC)"></div>' +
           '</div>' +
         '</div></div>' +
         '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +
