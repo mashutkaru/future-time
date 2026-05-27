@@ -408,7 +408,7 @@
     var email = escapeHtml(p.email);
     var photoHtml = '<div class="participant-photo-inner" style="width:100%;height:100%;min-height:0;flex:1;display:flex;box-sizing:border-box">' + participantPictureFront(p.key, nameEn) + '</div>';
     var backImg = participantPictureBack(p.key);
-    return '<div class="participant-card" data-id="' + p.id + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
+    return '<div class="participant-card" data-id="' + p.id + '" data-sector="' + escapeHtml(p.sector) + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
           '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;display:flex;align-items:stretch;justify-content:stretch">'+photoHtml+'</div>' +
@@ -512,6 +512,45 @@
 
   var state = { page: 'about', activeSector: 'all', search: '' };
 
+  function isMobileViewport() {
+    return window.matchMedia('(max-width: 900px)').matches;
+  }
+
+  function participantsScrollOffset() {
+    var nav = document.querySelector('nav');
+    var offset = nav ? nav.offsetHeight : 0;
+    if (isMobileViewport()) {
+      var header = document.querySelector('.participants-header-wrap');
+      if (header) offset += header.offsetHeight;
+    }
+    return offset + 8;
+  }
+
+  function scrollParticipantsAfterSector(sector) {
+    if (!isMobileViewport() || state.page !== 'participants') return;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        if (sector === 'all') {
+          scrollToTop();
+          return;
+        }
+        var page = document.getElementById('participants-page');
+        if (!page) return;
+        var cards = page.querySelectorAll('#cards-container .participant-card');
+        var card = null;
+        for (var i = 0; i < cards.length; i++) {
+          if (cards[i].getAttribute('data-sector') === sector) {
+            card = cards[i];
+            break;
+          }
+        }
+        if (!card) return;
+        var y = card.getBoundingClientRect().top + window.pageYOffset - participantsScrollOffset();
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      });
+    });
+  }
+
   function scrollToTop() {
     window.scrollTo(0, 0);
     document.documentElement.scrollTop = 0;
@@ -537,6 +576,7 @@
   function setActiveSector(s) {
     state.activeSector = s;
     renderParticipantsPage(document.getElementById('participants-page'), state.activeSector, state.search, setActiveSector, setSearch);
+    scrollParticipantsAfterSector(s);
   }
 
   function setSearch(s) {
