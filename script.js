@@ -528,7 +528,7 @@
   }
 
   function scrollParticipantsAfterSector(sector) {
-    if (!isMobileViewport() || state.page !== 'participants') return;
+    if (state.page !== 'participants') return;
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         if (sector === 'all') {
