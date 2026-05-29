@@ -17,7 +17,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
     :root {
-<<<<<<< Updated upstream
       --teal-dark: #214F63;
       --teal-hero: #3E788C;
       --teal-mid: #4D8796;
@@ -30,29 +29,17 @@
       --nav-highlight: var(--teal-pale);
       --nav-purple: var(--teal-soft);
       --nav-yellow: var(--teal-pale);
-=======
-      --bg-main: #D6E8E8;
-      --bg-secondary: #C0E0E0;
-      --teal-main: #5FA8A8;
-      --teal-dark: #0F7C82;
-      --teal-accent: #3CA7B0;
-      --teal-dark-accent: #4A7F99;
-      --white-soft: #F5F7F7;
-      --nav-bg: var(--teal-dark-accent);
-      --nav-accent: var(--teal-accent);
-      --nav-hover: var(--teal-accent);
->>>>>>> Stashed changes
     }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; overflow-x: hidden; background: var(--bg-main); color: var(--teal-dark); }
+    body { margin: 0; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
     nav {
       display: flex; align-items: center; padding: 10px 24px;
-      background: var(--nav-bg); color: var(--white-soft);
+      background: var(--nav-bg); color: white;
       position: sticky; top: 0; z-index: 100;
     }
     nav::after {
       content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
-      background: var(--nav-accent);
+      background: var(--nav-purple);
     }
     nav .logo { display: flex; align-items: center; flex: 1; cursor: pointer; }
     nav .logo img { height: 64px; width: auto; max-width: none; flex-shrink: 0; object-fit: contain; border-radius: 2px; display: block; }
@@ -61,17 +48,12 @@
     nav .logo-right { display: flex; align-items: center; justify-content: flex-end; flex: 1; cursor: pointer; }
     nav .logo-right img { height: 48px; object-fit: contain; object-position: center center; border-radius: 2px; display: block; transform: translateY(-4px); }
     nav button {
-      background: transparent; color: rgba(245,247,247,0.9); border: none;
+      background: transparent; color: rgba(255,255,255,0.9); border: none;
       border-radius: 999px; padding: 10px 24px; font-weight: 500; font-size: 15px;
       cursor: pointer; font-family: inherit; transition: all 0.2s;
     }
-<<<<<<< Updated upstream
     nav button:hover { background: var(--nav-highlight); color: var(--text-on-light); font-weight: 700; }
     nav button.active { background: var(--nav-highlight); color: var(--text-on-light); font-weight: 800; }
-=======
-    nav button:hover { background: var(--nav-hover); color: var(--white-soft); font-weight: 700; }
-    nav button.active { background: var(--teal-main); color: var(--white-soft); font-weight: 800; }
->>>>>>> Stashed changes
     #about-page, #participants-page, #team-page { display: none; }
     #about-page.active, #participants-page.active, #team-page.active { display: block; }
 
@@ -86,11 +68,7 @@
       nav button { padding: 8px 10px !important; font-size: 12px !important; min-height: 40px; }
     }
     .about-content { max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; }
-<<<<<<< Updated upstream
     .about-box { background: var(--teal-dark); border-radius: 20px; padding: 40px 48px; color: var(--text-on-dark); }
-=======
-    .about-box { background: var(--teal-dark-accent); border-radius: 20px; padding: 40px 48px; color: var(--white-soft); }
->>>>>>> Stashed changes
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
     .participants-content { max-width: 1300px; margin: 0 auto; padding: 20px 48px 0px; }
     .participants-content > .search-row { margin-top: 0; }
@@ -274,7 +252,6 @@
     }
     .team-card-masha { order: 1; }
     .team-card-hadas { order: 2; }
-<<<<<<< Updated upstream
     .team-card .team-name {
       text-align: center;
       margin-bottom: 24px;
@@ -347,10 +324,6 @@
     .team-card-masha .team-card-logo img {
       transform: translateY(-8px);
     }
-=======
-    .team-card .team-photo { background: var(--white-soft) !important; }
-    .participants-header-wrap { padding-bottom: 28px !important; }
->>>>>>> Stashed changes
     /* Participants header typography */
     .participants-header-wrap, .participants-header-wrap * { font-family: 'Inter', sans-serif !important; }
     .stats-bar-wrap { bottom: auto !important; }
@@ -435,7 +408,7 @@
       .about-box { padding: 24px 20px !important; }
       .about-box p { font-size: 15px !important; line-height: 1.75 !important; }
       .about-grid { display: flex !important; flex-direction: column !important; gap: 24px !important; }
-      .about-grid .about-col-ja { border-left: none !important; border-top: 1px solid rgba(245,247,247,0.35) !important; padding-left: 0 !important; padding-top: 24px !important; }
+      .about-grid .about-col-ja { border-left: none !important; border-top: 1px solid rgba(255,255,255,0.35) !important; padding-left: 0 !important; padding-top: 24px !important; }
       .about-cta button { width: 100%; max-width: 280px; padding: 14px 20px !important; font-size: 15px !important; }
       .participants-header-wrap { padding: 4px 12px 4px !important; }
       .participants-header-wrap > div > div:first-child { padding: 10px 0 0 0 !important; }
@@ -467,7 +440,6 @@
       .participant-card .card-back-upper { min-height: 160px !important; }
       .participant-card .card-front > div:nth-child(3) { flex-shrink: 0 !important; }
       .team-content { padding: 28px 16px 48px !important; }
-<<<<<<< Updated upstream
       .team-banner h1 { font-size: 24px !important; }
       .about-box .team-section-title { font-size: 16px !important; margin-bottom: 20px !important; }
       .about-box.team-section-box { padding: 28px 20px 36px !important; border-radius: 16px !important; }
@@ -485,15 +457,6 @@
         flex: 0 0 320px !important;
         margin-bottom: 20px !important;
       }
-=======
-      .team-content h1 { font-size: 26px !important; margin-bottom: 28px !important; }
-      .team-cards { gap: 28px !important; padding: 0 8px; display: flex !important; flex-direction: column !important; }
-      .team-card { max-width: 100% !important; }
-      .team-card .team-name { padding: 20px 20px 24px !important; text-align: center !important; }
-      .team-card .team-photo { height: 240px !important; padding: 0 20px 24px !important; overflow: hidden !important; background: var(--white-soft) !important; }
-      .team-card .team-photo img { width: 100% !important; height: 100% !important; max-height: 240px !important; object-fit: contain !important; }
-      .team-card .team-bio { padding: 0 20px 28px !important; }
->>>>>>> Stashed changes
       .team-card h2 { font-size: 20px !important; }
       .steering-section-box { padding: 24px 16px 20px !important; border-radius: 16px !important; }
       .steering-carousel-track { padding: 4px 40px 12px !important; gap: 12px !important; }
@@ -650,10 +613,6 @@
     <div id="team-page"></div>
   </main>
 
-<<<<<<< Updated upstream
   <script src="script.js?v=103"></script>
-=======
-  <script src="script.js?v=31"></script>
->>>>>>> Stashed changes
 </body>
 </html>
