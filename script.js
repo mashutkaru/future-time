@@ -2,26 +2,17 @@
   'use strict';
 
   var PHOTO_DIR = 'photos/';
-  /** Bump after replacing photos. Desktop 520×400, mobile 390×340 — wide art fills card (object-fit: cover). */
-  var PHOTO_VER = '24';
+  /** Bump after replacing photos. PNGs are 272×230; card photo area matches that ratio. */
+  var PHOTO_VER = '28';
 
-  function participantPhotoUrlDesktop(key) {
-    return PHOTO_DIR + key + '.webp?v=' + PHOTO_VER;
-  }
-  function participantPhotoUrlMobile(key) {
-    return PHOTO_DIR + 'mobile/' + key + '.webp?v=' + PHOTO_VER;
+  function participantPhotoUrl(key) {
+    return PHOTO_DIR + key + '.png?v=' + PHOTO_VER;
   }
   function participantPictureFront(key, nameEn) {
-    return '<picture class="participant-picture">' +
-      '<source media="(max-width:900px)" srcset="' + participantPhotoUrlMobile(key) + '"/>' +
-      '<img src="' + participantPhotoUrlDesktop(key) + '" alt="' + nameEn + '" loading="lazy" decoding="async"/>' +
-      '</picture>';
+    return '<img class="participant-picture" width="272" height="230" src="' + participantPhotoUrl(key) + '" alt="' + escapeHtml(nameEn) + '" loading="lazy" decoding="async"/>';
   }
   function participantPictureBack(key) {
-    return '<picture class="participant-picture participant-picture--back">' +
-      '<source media="(max-width:900px)" srcset="' + participantPhotoUrlMobile(key) + '"/>' +
-      '<img src="' + participantPhotoUrlDesktop(key) + '" alt="" loading="lazy" decoding="async"/>' +
-      '</picture>';
+    return '<img class="participant-picture participant-picture--back" src="' + participantPhotoUrl(key) + '" alt="" loading="lazy" decoding="async"/>';
   }
 
   const PARTICIPANTS = [
@@ -407,12 +398,12 @@
     var role = escapeHtml(p.role);
     var roleHe = escapeHtml(p.roleHe);
     var email = escapeHtml(p.email);
-    var photoHtml = '<div class="participant-photo-inner" style="width:100%;height:100%;min-height:0;flex:1;display:flex;box-sizing:border-box">' + participantPictureFront(p.key, nameEn) + '</div>';
+    var photoHtml = '<div class="participant-photo-inner">' + participantPictureFront(p.key, nameEn) + '</div>';
     var backImg = participantPictureBack(p.key);
     return '<div class="participant-card" data-id="' + p.id + '" data-sector="' + escapeHtml(p.sector) + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
         '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
-          '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;display:flex;align-items:stretch;justify-content:stretch">'+photoHtml+'</div>' +
+          '<div class="card-photo-wrap">'+photoHtml+'</div>' +
           '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+P.pale+';color:'+(c.text||P.text)+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
             '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:4px"><div style="font-weight:800;font-size:16px;color:'+(c.text||P.dark)+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||P.mid)+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||P.text)+';margin-top:4px">'+org+orgLine2+'</div></div>' +
             '<div class="card-front-label-wrap" style="display:flex;align-items:center;justify-content:center;min-height:0;margin-top:2px"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +

@@ -333,47 +333,53 @@
     /* Sector stats buttons: make inner label text larger */
     .stats-bar-wrap button > span:last-child { font-size: 15px !important; }
     .stats-bar-wrap button > span:first-child span:last-child { font-size: 15px !important; }
-    .participant-card .card-photo-wrap {
+    /* Participant photos: 272×230 — box keeps same shape, image fills it edge to edge */
+    #cards-container .participant-card .card-photo-wrap {
+      flex: 0 0 auto;
+      width: 100%;
+      aspect-ratio: 272 / 230;
+      min-height: 0;
+      min-width: 0;
       margin-bottom: 0 !important;
-      background: transparent !important;
+      background: #ffffff !important;
       padding: 0 !important;
       border-radius: 11px 11px 0 0 !important;
       overflow: hidden !important;
+      position: relative;
       align-self: stretch !important;
-      width: 100% !important;
     }
-    .participant-card .participant-photo-inner {
+    #cards-container .participant-card .participant-photo-inner {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       padding: 0 !important;
       margin: 0 !important;
       background: transparent !important;
-      align-items: stretch !important;
-      justify-content: stretch !important;
+      overflow: hidden !important;
+      box-sizing: border-box;
+    }
+    #cards-container .participant-card .participant-picture {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: fill !important;
+      object-position: center center !important;
+    }
+    #cards-container .participant-card .participant-back-thumb {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
       overflow: hidden !important;
     }
-    .participant-card .participant-picture {
-      width: 100% !important;
-      height: 100% !important;
-      display: block !important;
-      margin: 0 !important;
-    }
-    .participant-card .participant-picture img {
-      width: 100% !important;
-      height: 100% !important;
-      max-width: none !important;
-      max-height: none !important;
-      object-fit: cover !important;
-      object-position: center center !important;
-      display: block !important;
-    }
-    .participant-card .participant-back-thumb .participant-picture,
-    .participant-card .participant-back-thumb .participant-picture img {
+    #cards-container .participant-card .participant-back-thumb .participant-picture {
       width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
       object-position: center center !important;
     }
     .participant-card .card-back-upper { flex: 1 1 33% !important; min-height: 140px !important; }
-    .participant-card .participant-back-thumb { width: 140px !important; height: 140px !important; min-width: 140px !important; min-height: 140px !important; }
+    #cards-container .participant-card .participant-back-thumb { width: 140px !important; height: 140px !important; min-width: 140px !important; min-height: 140px !important; }
     .about-banner h1 { font-family: 'Inter', sans-serif; }
     .about-banner > div:first-child,
     .team-banner > div:first-child { padding: 32px 24px !important; }
@@ -430,8 +436,7 @@
       .cards-grid { grid-template-columns: 1fr !important; gap: 16px !important; padding: 0 !important; margin-top: 0 !important; }
       .participant-card { height: 480px !important; min-height: 480px !important; margin: 0 !important; }
       .participant-card .card-front { display: flex !important; flex-direction: column !important; height: 100% !important; min-height: 0 !important; }
-      .participant-card .card-photo-wrap { flex: 5 1 0 !important; min-height: 200px !important; height: auto !important; margin-bottom: 0 !important; }
-      .participant-card .card-photo-wrap .participant-photo-inner { min-height: 0 !important; }
+      #cards-container .participant-card .card-photo-wrap { flex: 0 0 auto !important; aspect-ratio: 272 / 230 !important; min-height: 0 !important; margin-bottom: 0 !important; }
       .participant-card .card-front > div:nth-child(2) { flex: 2 1 0 !important; min-height: 0 !important; overflow: hidden !important; }
       .participant-card .card-front-names { gap: 4px !important; }
       .participant-card .card-front-org { margin-top: 2px !important; padding-bottom: 8px !important; }
@@ -613,6 +618,6 @@
     <div id="team-page"></div>
   </main>
 
-  <script src="script.js?v=105"></script>
+  <script src="script.js?v=109"></script>
 </body>
 </html>
