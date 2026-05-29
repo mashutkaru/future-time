@@ -3,7 +3,7 @@
 
   var PHOTO_DIR = 'photos/';
   /** Bump after replacing photos. Desktop 520×400, mobile 390×340 — wide art fills card (object-fit: cover). */
-  var PHOTO_VER = '24';
+  var PHOTO_VER = '25';
 
   function participantPhotoUrlDesktop(key) {
     return PHOTO_DIR + key + '.webp?v=' + PHOTO_VER;
@@ -74,6 +74,7 @@
     { key:"Academia & Research", label:"Academia & Research", short:"Academia & Research", icon:"🎓" },
   ];
 
+<<<<<<< Updated upstream
   var P = { dark:'#214F63', hero:'#3E788C', mid:'#4D8796', soft:'#7EA7B5', pale:'#CEDDE2', text:'#214F63', nav:'#214F63' };
   var PRIMARY = P.dark;
   const SC = {
@@ -83,6 +84,25 @@
     "Healthcare System":   { bg:"#5783CB", light:"#C0C8D5", border:"#6b9bd4", text:"#3d3a5c" },
     "Civil Society":       { bg:"#5a7a4a", light:"#F0F3DE", border:"#9ba88e", text:"#3d3a5c" },
     "Academia & Research": { bg:"#755EE6", light:"#F3E8FF", border:"#a78bfa", text:"#3d3a5c" },
+=======
+  var C = {
+    bgMain: '#D6E8E8',
+    bgSecondary: '#C0E0E0',
+    tealMain: '#5FA8A8',
+    tealDark: '#0F7C82',
+    tealAccent: '#3CA7B0',
+    tealDarkAccent: '#4A7F99',
+    whiteSoft: '#F5F7F7',
+  };
+  var PRIMARY = C.tealDark;
+  const SC = {
+    "all":                 { bg: C.tealMain,      light: C.bgMain,      border: C.tealAccent,     text: C.tealDark },
+    "Central Government":  { bg: C.tealDarkAccent, light: C.bgSecondary, border: C.tealMain,     text: C.tealDark },
+    "Local Government":    { bg: C.tealMain,      light: C.bgMain,      border: C.tealDarkAccent, text: C.tealDark },
+    "Healthcare System":   { bg: C.tealAccent,    light: C.bgMain,      border: C.tealMain,     text: C.tealDark },
+    "Civil Society":       { bg: C.tealMain,      light: C.bgSecondary, border: C.tealAccent,     text: C.tealDark },
+    "Academia & Research": { bg: C.tealDarkAccent, light: C.bgMain,      border: C.tealAccent,     text: C.tealDark },
+>>>>>>> Stashed changes
   };
 
   function escapeHtml(str) {
@@ -125,26 +145,33 @@
       { icon:"🚀", titleEn:"Joint Initiatives", titleJa:"共同プロジェクトの推進", descEn:"Develop and lead collaborative initiatives that advance optimal aging in Israel.", descJa:"最適な高齢化を実現するための共同イニシアティブを開発・推進します。" },
     ];
 
-    var bgEn = '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">Preparing for an era in which people may live 100 years is one of the strategic challenges facing the State of Israel in the coming decades. It carries significant implications and opportunities across many fields and constitutes a true national mission.</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">Optimal preparation requires synergistic collaboration between systems and between people who share a common language, professional perspective, and a shared vision for the future. To address this need, <strong>&quot;Future Time&quot; (Zman Atid)</strong> was developed — a multi-system leadership program that brings together leaders who seek to drive change, think together, and act collaboratively around core challenges related to optimal aging, alongside organizational challenges concerning how systems operate and function.</p><p style="margin:0;font-size:14px;line-height:1.85;color:white"><strong>&quot;Future Time&quot;</strong> is part of the national program <strong>&quot;Atudot LeIsrael&quot; (Reserves for Israel)</strong>, a strategic initiative designed to build human capital reserves for Israel\'s public service sector. The program is the result of a collaboration between the Prime Minister\'s Office (Government and Society Division and the Atudot LeIsrael Division), the Ministry of Welfare and Social Security, the Ministry of Health, the Ministry for Social Equality, the Ministry of Finance, the National Insurance Institute, local government, and JDC Israel (Eshel and Elka).</p>';
-    var bgJa = '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">100年時代への備えは、今後数十年においてイスラエルが直面する最も重要な戦略的課題の一つである。この課題は、さまざまな分野において大きな意義と機会をもたらし、国家的使命として取り組むべきテーマである。</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">この課題に効果的に対応するためには、制度や組織、そして人々の間での分野横断的な連携が不可欠である。共通の言語、専門的な視点、そして未来に対する共有されたビジョンを持つリーダーたちによる協働が求められている。</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">そのために開発されたのが<strong>「זמן עתיד(Zman Atid / Future Time)」</strong>である。本プログラムは、制度や組織を横断したリーダーシッププログラムであり、変化を生み出すリーダーたちを結びつけ、最適な高齢化(Optimal Aging)に関する主要課題や制度・組織の運営に関わる課題について共に考え、協働して行動することを目的とする。</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">本プログラムは、イスラエルの公共サービス分野における人的資本の育成を目的とする国家戦略プログラムの一環として実施されている。</p><p style="margin:0;font-size:14px;line-height:1.85;color:white">この取り組みは、首相府(政府・社会局および 国家戦略プログラム部門)、社会福祉・社会保障省、保健省、社会的平等省、財務省、国民保険機構、地方自治体、および JDCイスラエル(Eshel・Elka) の協力により推進されている。</p>';
+    var bgEn = '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">Preparing for an era in which people may live 100 years is one of the strategic challenges facing the State of Israel in the coming decades. It carries significant implications and opportunities across many fields and constitutes a true national mission.</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">Optimal preparation requires synergistic collaboration between systems and between people who share a common language, professional perspective, and a shared vision for the future. To address this need, <strong>&quot;Future Time&quot; (Zman Atid)</strong> was developed — a multi-system leadership program that brings together leaders who seek to drive change, think together, and act collaboratively around core challenges related to optimal aging, alongside organizational challenges concerning how systems operate and function.</p><p style="margin:0;font-size:14px;line-height:1.85;color:#F5F7F7"><strong>&quot;Future Time&quot;</strong> is part of the national program <strong>&quot;Atudot LeIsrael&quot; (Reserves for Israel)</strong>, a strategic initiative designed to build human capital reserves for Israel\'s public service sector. The program is the result of a collaboration between the Prime Minister\'s Office (Government and Society Division and the Atudot LeIsrael Division), the Ministry of Welfare and Social Security, the Ministry of Health, the Ministry for Social Equality, the Ministry of Finance, the National Insurance Institute, local government, and JDC Israel (Eshel and Elka).</p>';
+    var bgJa = '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">100年時代への備えは、今後数十年においてイスラエルが直面する最も重要な戦略的課題の一つである。この課題は、さまざまな分野において大きな意義と機会をもたらし、国家的使命として取り組むべきテーマである。</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">この課題に効果的に対応するためには、制度や組織、そして人々の間での分野横断的な連携が不可欠である。共通の言語、専門的な視点、そして未来に対する共有されたビジョンを持つリーダーたちによる協働が求められている。</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">そのために開発されたのが<strong>「זמן עתיד(Zman Atid / Future Time)」</strong>である。本プログラムは、制度や組織を横断したリーダーシッププログラムであり、変化を生み出すリーダーたちを結びつけ、最適な高齢化(Optimal Aging)に関する主要課題や制度・組織の運営に関わる課題について共に考え、協働して行動することを目的とする。</p><p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">本プログラムは、イスラエルの公共サービス分野における人的資本の育成を目的とする国家戦略プログラムの一環として実施されている。</p><p style="margin:0;font-size:14px;line-height:1.85;color:#F5F7F7">この取り組みは、首相府(政府・社会局および 国家戦略プログラム部門)、社会福祉・社会保障省、保健省、社会的平等省、財務省、国民保険機構、地方自治体、および JDCイスラエル(Eshel・Elka) の協力により推進されている。</p>';
 
     // Extra text block above the main "OBJECTIVES & GOALS" section.
     // Populated from the text provided in the PDF at the path you shared.
     var delegationEnHtml =
-      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">The Future Time Delegation is a multidisciplinary study program designed to explore Japan’s advanced and integrated approach to population aging - one of the most pressing global challenges of the 21st century.</p>' +
-      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">As a global leader in longevity and aging innovation, Japan offers a unique ecosystem where healthcare, welfare, community systems, governance, and technology operate in close integration to support healthy, independent, and dignified aging.</p>' +
-      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">By examining Japan’s holistic and systemic approach, the delegation seeks to generate actionable insights and strengthen Israel–Japan collaboration in addressing the challenges and opportunities of aging societies.</p>' +
-      '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:white"><strong>The program is structured around four core pillars:</strong></p>' +
-      '<ul style="margin:0 0 16px 18px;padding:0;color:white;font-size:14px;line-height:1.85">' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">The Future Time Delegation is a multidisciplinary study program designed to explore Japan’s advanced and integrated approach to population aging - one of the most pressing global challenges of the 21st century.</p>' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">As a global leader in longevity and aging innovation, Japan offers a unique ecosystem where healthcare, welfare, community systems, governance, and technology operate in close integration to support healthy, independent, and dignified aging.</p>' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">By examining Japan’s holistic and systemic approach, the delegation seeks to generate actionable insights and strengthen Israel–Japan collaboration in addressing the challenges and opportunities of aging societies.</p>' +
+      '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:#F5F7F7"><strong>The program is structured around four core pillars:</strong></p>' +
+      '<ul style="margin:0 0 16px 18px;padding:0;color:#F5F7F7;font-size:14px;line-height:1.85">' +
         '<li style="margin:0 0 6px">Systemic infrastructure and policy frameworks</li>' +
         '<li style="margin:0 0 6px">Prevention, dependency reduction, and care models</li>' +
         '<li style="margin:0 0 6px">Community and multi-generational living</li>' +
         '<li style="margin:0">Innovation, investment, and technology</li>' +
       '</ul>' +
+<<<<<<< Updated upstream
       '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">In addition to site visits and professional engagements in Japan, the program will include lectures and presentations from Israeli participants, enabling a two-way exchange of knowledge and experience. This mutual learning framework is designed to foster meaningful dialogue and identify opportunities for collaboration, adaptation, and joint initiatives.</p>' +
       '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:white"><strong>The delegation aims to engage with a wide range of institutions across the full continuum of services, including:</strong></p>' +
       '<ul style="margin:0 0 8px 18px;padding:0;color:white;font-size:14px;line-height:1.85">' +
         '<li style="margin:0 0 6px">Public day care and rehabilitation systems</li>' +
+=======
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">In addition to site visits and professional engagements in Japan, the program will include lectures and presentations from Israeli participants, enabling a two-way exchange of knowledge and experience. This mutual learning framework is designed to foster meaningful dialogue and identify opportunities for collaboration, adaptation, and joint initiatives.</p>' +
+      '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:#F5F7F7"><strong>The delegation aims to engage with a wide range of institutions across the full continuum of services, including:</strong></p>' +
+      '<ul style="margin:0 0 8px 18px;padding:0;color:#F5F7F7;font-size:14px;line-height:1.85">' +
+        '<li style="margin:0 0 6px">Public and private healthcare and rehabilitation systems</li>' +
+>>>>>>> Stashed changes
         '<li style="margin:0 0 6px">Municipal and regional governance models</li>' +
         '<li style="margin:0 0 6px">Welfare and community-based services</li>' +
         '<li style="margin:0 0 6px">Multi-generational community centers</li>' +
@@ -153,26 +180,34 @@
       '</ul>';
 
     var delegationJaHtml =
-      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">本視察団は、21世紀における最も重要なグローバル課題の一つである人口高齢化に対し、日本の先進的かつ統合的なアプローチを探求することを目的とした多分野横断型のスタディプログラムである。</p>' +
-      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">高齢化および長寿に関する分野において世界的リーダーである日本は、医療、福祉、地域社会、ガバナンス、テクノロジーが有機的に連携する独自のエコシステムを有しており、健康で自立した尊厳ある高齢期の実現を支えている。</p>' +
-      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">本視察団は、日本の包括的かつシステム的な取り組みを検証することにより、実践的な知見の創出と、高齢化社会における課題および機会への対応に向けた日イスラエル間の連携強化を目指すものである。</p>' +
-      '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:white"><strong>本プログラムは、以下の4つの中核テーマに基づいて構成される：</strong></p>' +
-      '<ul style="margin:0 0 16px 18px;padding:0;color:white;font-size:14px;line-height:1.85">' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">本視察団は、21世紀における最も重要なグローバル課題の一つである人口高齢化に対し、日本の先進的かつ統合的なアプローチを探求することを目的とした多分野横断型のスタディプログラムである。</p>' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">高齢化および長寿に関する分野において世界的リーダーである日本は、医療、福祉、地域社会、ガバナンス、テクノロジーが有機的に連携する独自のエコシステムを有しており、健康で自立した尊厳ある高齢期の実現を支えている。</p>' +
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">本視察団は、日本の包括的かつシステム的な取り組みを検証することにより、実践的な知見の創出と、高齢化社会における課題および機会への対応に向けた日イスラエル間の連携強化を目指すものである。</p>' +
+      '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:#F5F7F7"><strong>本プログラムは、以下の4つの中核テーマに基づいて構成される：</strong></p>' +
+      '<ul style="margin:0 0 16px 18px;padding:0;color:#F5F7F7;font-size:14px;line-height:1.85">' +
         '<li style="margin:0 0 6px">制度基盤および政策フレームワーク</li>' +
         '<li style="margin:0 0 6px">予防・自立支援・ケアモデル</li>' +
         '<li style="margin:0 0 6px">地域社会および多世代共生</li>' +
         '<li style="margin:0">イノベーション・投資・テクノロジー</li>' +
       '</ul>' +
+<<<<<<< Updated upstream
       '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:white">本プログラムでは、日本における視察および専門家との交流に加え、イスラエル側参加者による講義・プレゼンテーションを実施し、双方向の知識および経験の共有を行う。この相互学習の枠組みを通じて、実質的な対話の促進と、協働・適応・共同イニシアティブの創出機会の特定を図る。</p>' +
       '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:white"><strong>視察団は、サービス提供の全体像を横断する多様な機関との連携を目指しており、主な訪問先は以下を想定している：</strong></p>' +
       '<ul style="margin:0 0 8px 18px;padding:0;color:white;font-size:14px;line-height:1.85">' +
         '<li style="margin:0 0 6px">公的デイケアおよびリハビリテーション制度</li>' +
+=======
+      '<p style="margin:0 0 16px;font-size:14px;line-height:1.85;color:#F5F7F7">本プログラムでは、日本における視察および専門家との交流に加え、イスラエル側参加者による講義・プレゼンテーションを実施し、双方向の知識および経験の共有を行う。この相互学習の枠組みを通じて、実質的な対話の促進と、協働・適応・共同イニシアティブの創出機会の特定を図る。</p>' +
+      '<p style="margin:0 0 8px;font-size:14px;line-height:1.85;color:#F5F7F7"><strong>視察団は、サービス提供の全体像を横断する多様な機関との連携を目指しており、主な訪問先は以下を想定している：</strong></p>' +
+      '<ul style="margin:0 0 8px 18px;padding:0;color:#F5F7F7;font-size:14px;line-height:1.85">' +
+        '<li style="margin:0 0 6px">医療およびリハビリテーション（公的・民間）</li>' +
+>>>>>>> Stashed changes
         '<li style="margin:0 0 6px">地方自治体および広域行政モデル</li>' +
         '<li style="margin:0 0 6px">福祉サービスおよび地域支援体制</li>' +
         '<li style="margin:0 0 6px">多世代共生型コミュニティセンター</li>' +
         '<li style="margin:0 0 6px">政府機関および政策フレームワーク</li>' +
         '<li style="margin:0">イノベーション拠点、投資機関、および高齢化関連テクノロジー分野</li>' +
       '</ul>';
+<<<<<<< Updated upstream
     var goalBoxStyle = 'background:rgba(255,255,255,0.1);border-radius:12px;padding:18px 20px;border-left:4px solid '+P.soft+';margin-bottom:12px';
     var goalsEnHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleEn+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descEn+'</div></div>'; }).join('');
     var goalsJaHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:white;margin-bottom:6px">'+g.titleJa+'</div><div style="font-size:13.5px;color:rgba(255,255,255,0.95);line-height:1.6">'+g.descJa+'</div></div>'; }).join('');
@@ -180,30 +215,52 @@
     container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
       '<div class="about-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
         '<div style="padding:48px 24px;text-align:center"><div style="display:flex;align-items:center;justify-content:center;gap:14px"><img src="images/just_the_round_logo.png" alt="Future Time" style="height:54px;width:auto;display:block" /><h1 style="margin:0;color:white;font-size:32px;font-weight:800;letter-spacing:0.02em">Future Time Program</h1></div></div>' +
+=======
+    var goalBoxStyle = 'background:rgba(245,247,247,0.12);border-radius:12px;padding:18px 20px;border-left:4px solid '+C.tealAccent+';margin-bottom:12px';
+    var goalsEnHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:#F5F7F7;margin-bottom:6px">'+g.titleEn+'</div><div style="font-size:13.5px;color:rgba(245,247,247,0.95);line-height:1.6">'+g.descEn+'</div></div>'; }).join('');
+    var goalsJaHtml = goals.map(function(g){ return '<div style="'+goalBoxStyle+'"><div style="font-weight:800;font-size:15px;color:#F5F7F7;margin-bottom:6px">'+g.titleJa+'</div><div style="font-size:13.5px;color:rgba(245,247,247,0.95);line-height:1.6">'+g.descJa+'</div></div>'; }).join('');
+
+    // Show the sponsorship banner only on mobile/tablet.
+    // (Desktop hides it entirely by not rendering the image markup.)
+    var isDesktop = window.matchMedia ? window.matchMedia('(min-width: 901px)').matches : window.innerWidth > 900;
+    var sponsorshipHtml = isDesktop ? '' :
+      '<div style="background:#F5F7F7;width:100%;display:flex;justify-content:center"><div style="width:1200px;max-width:100%;height:50px;overflow:hidden"><img src="sponsorship.png" alt="Program partners and sponsors" style="width:100%;height:100%;object-fit:contain;display:block" /></div></div>';
+
+    container.innerHTML = '<div style="min-height:100vh;background:#D6E8E8">' +
+      '<div class="about-banner" style="background:#4A7F99;width:100%;overflow:hidden">' +
+        '<div style="padding:48px 24px;text-align:center"><div style="display:flex;align-items:center;justify-content:center;gap:14px"><img src="images/just_the_round_logo.png" alt="Future Time" style="height:54px;width:auto;display:block" /><h1 style="margin:0;color:#F5F7F7;font-size:32px;font-weight:800;letter-spacing:0.02em">Future Time Program</h1></div></div>' +
+        sponsorshipHtml +
+>>>>>>> Stashed changes
       '</div>' +
       '<div class="about-content">' +
         '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px">' +
           '<div class="about-grid">' +
             '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">DELEGATION OVERVIEW</div>'+delegationEnHtml+'</div>' +
-            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">視察団概要</div>'+delegationJaHtml+'</div>' +
+            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(245,247,247,0.35);padding-left:24px"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">視察団概要</div>'+delegationJaHtml+'</div>' +
           '</div>' +
         '</div>' +
         '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px">' +
           '<div class="about-grid">' +
             '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">BACKGROUND</div>'+bgEn+'</div>' +
-            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">背景</div>'+bgJa+'</div>' +
+            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(245,247,247,0.35);padding-left:24px"><div style="font-weight:900;font-size:18px;letter-spacing:0.08em;margin-bottom:20px;text-align:center">背景</div>'+bgJa+'</div>' +
           '</div>' +
         '</div>' +
         '<div class="about-box" style="box-shadow:0 4px 24px rgba(0,0,0,0.15)">' +
           '<div class="about-grid" style="margin-bottom:28px">' +
+<<<<<<< Updated upstream
             '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">OBJECTIVES &amp; GOALS</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">Program Objective</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">To establish a network of <strong>29 senior leaders</strong> from diverse sectors, working together to promote optimal aging in Israel in the era of 100-year lives.</p></div>' +
             '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">目的及目標</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">プログラムの目的</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.95)">多様な分野で活躍する29名のリーダーによるネットワークを形成し、100年時代におけるイスラエルの最適な高齢化(Optimal Aging)の推進を目指します。</p></div>' +
+=======
+            '<div style="min-width:0;flex:1"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">OBJECTIVES &amp; GOALS</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">Program Objective</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(245,247,247,0.95)">To establish a network of <strong>30 senior leaders</strong> from diverse sectors, working together to promote optimal aging in Israel in the era of 100-year lives.</p></div>' +
+            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(245,247,247,0.35);padding-left:24px"><div style="font-weight:900;font-size:20px;letter-spacing:0.06em;margin-bottom:24px;text-align:center">目的及目標</div><div style="font-weight:800;font-size:16px;margin-bottom:10px">プログラムの目的</div><p style="margin:0;font-size:14px;line-height:1.8;color:rgba(245,247,247,0.95)">多様な分野で活躍する30名のリーダーによるネットワークを形成し、100年時代におけるイスラエルの最適な高齢化(Optimal Aging)の推進を目指します。</p></div>' +
+>>>>>>> Stashed changes
           '</div>' +
           '<div class="about-grid">' +
             '<div style="min-width:0;flex:1"><div style="font-weight:800;font-size:16px;margin-bottom:12px">Program Goals</div>'+goalsEnHtml+'</div>' +
-            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(255,255,255,0.35);padding-left:24px"><div style="font-weight:800;font-size:16px;margin-bottom:12px">プログラムの目標</div>'+goalsJaHtml+'</div>' +
+            '<div class="about-col-ja" style="min-width:0;flex:1;border-left:1px solid rgba(245,247,247,0.35);padding-left:24px"><div style="font-weight:800;font-size:16px;margin-bottom:12px">プログラムの目標</div>'+goalsJaHtml+'</div>' +
           '</div>' +
         '</div>' +
+<<<<<<< Updated upstream
         '<section class="about-group-image" style="margin-top:36px">' +
           '<div style="background:'+P.dark+';border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,0.12)">' +
             '<img src="'+PHOTO_DIR+'Group_image.jpeg" alt="Future Time group" style="width:100%;height:auto;display:block;border-radius:12px;object-fit:cover" loading="lazy" decoding="async"/>' +
@@ -211,6 +268,10 @@
         '</section>' +
         '<section class="about-cta" style="margin-top:24px;text-align:center">' +
           '<button id="cta-participants" style="background:'+P.pale+';color:'+P.dark+';border:none;border-radius:14px;padding:16px 40px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 4px 18px rgba(0,0,0,0.2)">👥 Meet the 29 Participants →</button>' +
+=======
+        '<section class="about-cta" style="margin-top:40px;text-align:center">' +
+          '<button id="cta-participants" style="background:#3CA7B0;color:#F5F7F7;border:none;border-radius:14px;padding:16px 40px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 4px 18px rgba(0,0,0,0.2)">👥 Meet the 30 Participants →</button>' +
+>>>>>>> Stashed changes
         '</section>' +
       '</div></div>';
 
@@ -231,6 +292,7 @@
       "She teaches at leading universities in Japan and Israel, including Kyoto University, Doshisha University, Ritsumeikan University, and the University of Haifa. Alongside her academic work, she has led numerous cross-cultural initiatives connecting students, researchers, and professionals from different countries.",
       "Living in Japan for over a decade, Hadas engages with the country not only as a scholar but also through everyday life. Fluent in Japanese and deeply immersed in the culture, she continuously explores Japan's institutions, communities, traditions, arts, and landscapes. Her curiosity about the \"Land of the Rising Sun\" fuels her work and shapes the learning experiences she designs for others."
     ];
+<<<<<<< Updated upstream
     var hadasBarzilaiPars = [
       "Hadas Barzilai directs the \"FutureTime\" program at Joint-ELKA, fostering cross-sector collaboration to improve the efficiency and effectiveness of systems and organizations, with the aim of enhancing quality of life for Israeli citizens.",
       "In her previous roles at ELKA, Hadas contributed to developing the Regional Clusters Initiative. She worked closely with the Eastern Negev regional authorities cluster, establishing and leading a forum for local authority heads, a welfare forum, and a multi-sector leadership program. These efforts culminated in a strategic regional economic development plan for the Eastern Negev.",
@@ -281,6 +343,26 @@
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png?v=2" alt="Dr. Hadas Kushelevich"></div>' +
             '<div class="team-bio">'+hadasBioHtml+'</div>' +
             '<div class="team-card-logo"><img src="images/IJAC_logo.png?v=2" alt="International Journal of Arts and Commerce (IJAC)"></div>' +
+=======
+    var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:#0F7C82';
+    var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var hadasBioHtml = hadasPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var cardStyle = 'background:#F5F7F7;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);max-width:560px';
+    var photoStyle = 'width:100%;height:280px;object-fit:contain;object-position:center center';
+    container.innerHTML = '<div style="min-height:100vh;background:#D6E8E8">' +
+      '<div class="team-content">' +
+        '<h1 style="font-size:36px;font-weight:800;color:#0F7C82;margin:0 0 48px;text-align:center">Meet the Team</h1>' +
+        '<div class="team-cards" style="display:flex;flex-wrap:wrap;justify-content:center;gap:48px">' +
+          '<div class="team-card team-card-masha" style="'+cardStyle+'">' +
+            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0F7C82">Masha Robeen</h2></div>' +
+            '<div class="team-photo" style="padding:0 24px 24px;background:#F5F7F7"><img src="'+PHOTO_DIR+'Masha_Robeen.png" alt="Masha Robeen" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:0 32px 32px 28px">'+mashaBioHtml+'</div>' +
+          '</div>' +
+          '<div class="team-card team-card-hadas" style="'+cardStyle+'">' +
+            '<div class="team-name" style="padding:24px 32px 12px"><h2 style="margin:0;font-size:24px;font-weight:800;color:#0F7C82">Dr. Hadas Kushelevich</h2></div>' +
+            '<div class="team-photo" style="padding:0 24px 24px;background:#F5F7F7"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png" alt="Dr. Hadas Kushelevich" style="'+photoStyle+';display:block" /></div>' +
+            '<div class="team-bio" style="padding:0 32px 32px 28px">'+hadasBioHtml+'</div>' +
+>>>>>>> Stashed changes
           '</div>' +
         '</div></div>' +
         '<div class="about-box team-section-box" style="'+teamBoxStyle+'">' +
@@ -389,16 +471,28 @@
   }
 
   function sectorBadge(sector) {
+<<<<<<< Updated upstream
     var c = SC[sector] || { light:"#f1f5f9", text:"#3d3a5c", border:"#cbd5e1" };
     return '<span style="background:'+c.light+';color:'+c.text+';border:1.5px solid '+c.border+';font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px">'+escapeHtml(sector)+'</span>';
   }
   function renderParticipantCard(p) {
     var c = SC[p.sector] || { bg:"#334155", border:"#64748b", light:"#f1f5f9", text:"#3d3a5c" };
+=======
+    var c = SC[sector] || { light:"#D6E8E8", text:"#0F7C82", border:"#C0E0E0" };
+    return '<span style="background:'+c.light+';color:'+c.text+';border:1.5px solid '+c.border+';font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px">'+escapeHtml(sector)+'</span>';
+  }
+  function renderParticipantCard(p) {
+    var c = SC[p.sector] || { bg:"#4A7F99", border:"#5FA8A8", light:"#D6E8E8" };
+>>>>>>> Stashed changes
     var initial = p.nameEn.charAt(0);
     var nameEn = escapeHtml(p.nameEn);
     var nameJa = escapeHtml(p.nameJa || '');
     var nameHe = escapeHtml(p.nameHe);
+<<<<<<< Updated upstream
     var nameJaHtml = nameJa ? '<div style="font-size:13px;color:'+(c.text||P.mid)+';opacity:0.9">'+nameJa+'</div>' : '';
+=======
+    var nameJaHtml = nameJa ? '<div style="font-size:13px;color:'+(c.text||'#0F7C82')+';opacity:0.9">'+nameJa+'</div>' : '';
+>>>>>>> Stashed changes
     var nameJaBackHtml = nameJa ? '<div style="font-size:12px;opacity:0.82">'+nameJa+'</div>' : '';
     var org = escapeHtml(p.org);
     var orgBack = escapeHtml(p.orgBack || p.org);
@@ -411,20 +505,35 @@
     var backImg = participantPictureBack(p.key);
     return '<div class="participant-card" data-id="' + p.id + '" data-sector="' + escapeHtml(p.sector) + '" style="perspective:900px;cursor:pointer;height:420px;min-height:420px;margin:12px">' +
       '<div class="card-inner" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.55s">' +
-        '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:white;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
+        '<div class="card-front" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;background:#F5F7F7;border-radius:14px;border:2.5px solid '+c.border+';overflow:hidden;display:flex;flex-direction:column;height:100%;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">' +
           '<div class="card-photo-wrap" style="flex:3 1 0;min-height:150px;min-width:0;overflow:hidden;display:flex;align-items:stretch;justify-content:stretch">'+photoHtml+'</div>' +
+<<<<<<< Updated upstream
           '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+P.pale+';color:'+(c.text||P.text)+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
             '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:4px"><div style="font-weight:800;font-size:16px;color:'+(c.text||P.dark)+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||P.mid)+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||P.text)+';margin-top:4px">'+org+orgLine2+'</div></div>' +
             '<div class="card-front-label-wrap" style="display:flex;align-items:center;justify-content:center;min-height:0;margin-top:2px"><div style="background:'+c.bg+';color:white;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
+=======
+          '<div style="flex:2 1 0;min-height:0;padding:12px 14px 6px;overflow:hidden;background:'+(c.light||c.bg)+';color:'+(c.text||'#4A7F99')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">' +
+            '<div class="card-front-names" style="flex-shrink:0;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:16px;color:'+(c.text||'#0F7C82')+'">'+nameEn+'</div>'+nameJaHtml+'<div style="font-family:Arial;direction:rtl;font-size:16px;color:'+(c.text||'#0F7C82')+'">'+nameHe+'</div><div class="card-front-org" style="font-size:13px;font-weight:600;color:'+(c.text||'#4A7F99')+';margin-top:4px">'+org+orgLine2+'</div></div>' +
+            '<div class="card-front-label-wrap" style="display:flex;align-items:center;justify-content:center;min-height:0;margin-top:2px"><div style="background:'+c.bg+';color:#F5F7F7;font-size:14px;font-weight:700;padding:6px 14px;border-radius:20px">'+escapeHtml(p.sector)+'</div></div>' +
+>>>>>>> Stashed changes
           '</div>' +
-          '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:white;background:'+c.bg+'">View Details</div>' +
+          '<div style="flex-shrink:0;text-align:center;padding:8px;font-size:10px;color:#F5F7F7;background:'+c.bg+'">View Details</div>' +
         '</div>' +
+<<<<<<< Updated upstream
         '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:white;display:flex;flex-direction:column;gap:0;overflow:hidden">' +
           '<div class="card-back-upper" style="flex:1 1 33%;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:16px 0 20px;gap:12px"><div class="participant-back-thumb" style="width:140px;height:140px;min-width:140px;min-height:140px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,0.5);flex-shrink:0;background:rgba(255,255,255,0.1);box-shadow:0 4px 12px rgba(0,0,0,0.2)">'+backImg+'</div><div style="text-align:center;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+'<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div></div></div>' +
           '<div style="height:1px;background:rgba(255,255,255,0.25);flex-shrink:0"></div>' +
           '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px"><div style="font-size:13px"><strong>'+orgBack+orgLine2+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+orgHe+'</span></div>' +
           '<div style="margin-top:8px;font-size:13px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+roleHe+'</span></div>' +
           '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:'+P.pale+'" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
+=======
+        '<div class="card-back" style="position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(160deg,'+c.bg+','+c.bg+'ee);border-radius:14px;padding:18px;color:#F5F7F7;display:flex;flex-direction:column;gap:0;overflow:hidden">' +
+          '<div class="card-back-upper" style="flex:1 1 33%;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:16px 0 20px;gap:12px"><div class="participant-back-thumb" style="width:140px;height:140px;min-width:140px;min-height:140px;border-radius:50%;overflow:hidden;border:3px solid rgba(245,247,247,0.5);flex-shrink:0;background:rgba(245,247,247,0.1);box-shadow:0 4px 12px rgba(0,0,0,0.2)">'+backImg+'</div><div style="text-align:center;display:flex;flex-direction:column;gap:6px"><div style="font-weight:800;font-size:17px">'+nameEn+'</div>'+nameJaBackHtml+'<div style="font-family:Arial;direction:rtl;font-size:13px;opacity:0.88">'+nameHe+'</div></div></div>' +
+          '<div style="height:1px;background:rgba(245,247,247,0.25);flex-shrink:0"></div>' +
+          '<div style="flex:1;min-height:0;overflow-y:auto;padding:12px 0 8px"><div style="font-size:13px"><strong>'+org+orgLine2+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+orgHe+'</span></div>' +
+          '<div style="margin-top:8px;font-size:13px"><strong>'+role+'</strong><br/><span style="font-family:Arial;direction:rtl;font-size:11px;opacity:0.7">'+roleHe+'</span></div>' +
+          '<div style="margin-top:8px"><a href="mailto:'+email+'" style="color:#3CA7B0" onclick="event.stopPropagation()">'+email+'</a></div></div>' +
+>>>>>>> Stashed changes
           '<div style="text-align:center;font-size:10px;opacity:0.5;flex-shrink:0;padding-top:4px">TAP TO FLIP BACK</div>' +
         '</div>' +
       '</div></div>';
@@ -435,6 +544,7 @@
     var filtered = filterParticipants(activeSector, search);
 
     var statsHtml = SECTORS.map(function(s){
+<<<<<<< Updated upstream
       var c = SC[s.key] || { bg:P.nav, border:P.nav, light:P.pale, text:"#ffffff" };
       var isActive = activeSector === s.key;
       var btnBg = isActive ? (s.key === 'all' ? P.nav : c.bg) : 'white';
@@ -443,6 +553,11 @@
       var btnBorderW = isActive && s.key === 'all' ? '1.5px' : '2px';
       var btnShadow = isActive && s.key === 'all' ? 'box-shadow:0 0 0 1px rgba(255,255,255,0.2);' : '';
       return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+btnBg+';border:'+btnBorderW+' solid '+btnBorder+';color:'+btnColor+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible;'+btnShadow+'"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
+=======
+      var c = SC[s.key] || { bg:"#4A7F99", border:"#3CA7B0", light:"#D6E8E8", text:"#4A7F99" };
+      var isActive = activeSector === s.key;
+      return '<button data-sector="'+s.key+'" class="sector-btn" style="flex:1;min-width:0;background:'+(isActive?c.bg:'#F5F7F7')+';border:2px solid '+(isActive?c.border:(c.border||'#C0E0E0'))+';color:'+(isActive?'#F5F7F7':'#0F7C82')+';border-radius:999px;padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;overflow:visible"><span style="display:flex;align-items:center;gap:4px;flex-shrink:0"><span style="font-size:14px">'+s.icon+'</span><span style="font-weight:900;font-size:14px">'+(cnt[s.key]||0)+'</span></span><span style="font-size:10px;font-weight:600;line-height:1.2;text-align:center;word-break:break-word">'+s.short+'</span></button>';
+>>>>>>> Stashed changes
     }).join('');
 
     var steeringBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.12);margin-bottom:32px';
@@ -464,14 +579,20 @@
     var isEmpty = container.querySelector('.participants-empty');
 
     if (!searchRow) {
+<<<<<<< Updated upstream
       container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
         '<div class="participants-header-wrap" style="background:'+P.hero+';padding:28px 48px 24px;color:white;position:relative">' +
+=======
+      container.innerHTML = '<div style="min-height:100vh;background:#D6E8E8">' +
+        '<div class="participants-header-wrap" style="background:rgba(74,127,153,0.92);padding:28px 48px 24px;color:#F5F7F7;position:relative">' +
+>>>>>>> Stashed changes
           '<div style="max-width:1204px;margin:0 auto;display:flex;align-items:flex-start;justify-content:flex-start;gap:28px">' +
             '<div style="flex:1;min-width:0;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:6px 12px 0 0"><h1 style="margin:0;font-size:28px;font-weight:800;display:flex;align-items:center;gap:10px;justify-content:flex-start;line-height:1.1">Program Participants</h1><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Choose participants by affiliation label</p><p style="margin:0;opacity:0.7;font-size:15px;font-weight:800;line-height:1.35;max-width:580px;text-align:left">Search and filter all program participants across sectors</p></div>' +
             '<div class="stats-bar-wrap" id="stats-bar" style="flex:0 1 640px;max-width:640px;width:100%;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;justify-content:flex-end;margin-left:auto">'+statsHtml+'</div>' +
           '</div>' +
         '</div>' +
         '<div class="participants-content">' +
+<<<<<<< Updated upstream
           '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:0;margin-bottom:6px;padding:4px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:0 1 420px;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid '+P.soft+';border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:white" /></div>' +
           steeringSectionHtml +
           '<section class="all-participants-section">' +
@@ -480,6 +601,13 @@
             filtered.map(renderParticipantCard).join('') +
           '</div></section>' +
           '<div class="participants-empty" style="display:none;text-align:center;padding:60px;color:'+P.soft+'"><div style="font-size:44px;margin-bottom:12px">🔍</div><div style="font-size:17px;font-weight:700">No participants found</div></div>' +
+=======
+          '<div class="search-row" dir="ltr" style="display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:6px;margin-bottom:6px;padding:6px 0"><input type="text" id="search-input" dir="ltr" autocomplete="off" placeholder="Search by name, org, role" style="flex:0 1 420px;min-width:200px;max-width:420px;padding:14px 24px 14px 48px;border:1.5px solid #C0E0E0;border-radius:999px;font-size:14px;font-family:inherit;box-sizing:border-box;background:#D6E8E8" /></div>' +
+          '<div class="cards-grid" style="margin-top:4px;padding:4px 0" id="cards-container">' +
+            filtered.map(renderParticipantCard).join('') +
+          '</div>' +
+          '<div class="participants-empty" style="display:none;text-align:center;padding:60px;color:#5FA8A8"><div style="font-size:44px;margin-bottom:12px">🔍</div><div style="font-size:17px;font-weight:700">No participants found</div></div>' +
+>>>>>>> Stashed changes
         '</div></div>';
 
       var input = container.querySelector('#search-input');
