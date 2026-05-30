@@ -220,13 +220,19 @@
       "Dr. Hadas Kushelevich is an educator, researcher, and bridge-builder between Israel and Japan. Originally from Israel, she holds a B.A. in Japanese Studies and an M.A. in Political Science from the Hebrew University of Jerusalem. She moved to Japan in 2012 as a recipient of the prestigious MEXT scholarship and has lived there ever since, developing deep familiarity with Japanese society, institutions, and culture.",
       "Dr. Kushelevich earned her Ph.D. from the Graduate School of Law and Politics at Osaka University, where her research focuses on Japanese political institutions and regulatory governance. Her doctoral work examined the regulation of Japan's pharmaceutical market, exploring the intersection of politics, public policy, and organizational reputation.",
       "She teaches at leading universities in Japan and Israel, including Kyoto University, Doshisha University, Ritsumeikan University, and the University of Haifa. Alongside her academic work, she has led numerous cross-cultural initiatives connecting students, researchers, and professionals from different countries.",
-      "In addition to her academic work, Dr. Kushelevich serves as Chairperson of the Israel–Japan Academic and Cultural Relations Association (<a href=\"https://www.japan-israel.org/\" target=\"_blank\" rel=\"noopener noreferrer\">IJAC</a>), a non-profit organization dedicated to strengthening academic, cultural, and professional ties between Israel and Japan. Through IJAC, she promotes international collaboration among universities, researchers, students, policymakers, businesses, and civil society organizations. The association develops initiatives in education, research, policy dialogue, cultural exchange, and innovation, fostering mutual understanding and creating new opportunities for cooperation between the two countries. <a href=\"https://www.japan-israel.org/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.japan-israel.org/</a>"
+      "In addition to her academic work, Dr. Kushelevich serves as Chairperson of the Israel–Japan Academic and Cultural Relations Association (<a href=\"https://www.japan-israel.org/\" target=\"_blank\" rel=\"noopener noreferrer\">IJAC</a>), a non-profit organization dedicated to strengthening academic, cultural, and professional ties between Israel and Japan. Through IJAC, she promotes international collaboration among universities, researchers, students, policymakers, businesses, and civil society organizations. The association develops initiatives in education, research, policy dialogue, cultural exchange, and innovation, fostering mutual understanding and creating new opportunities for cooperation between the two countries."
     ];
     var hadasBarzilaiPars = [
       "Hadas Barzilai directs the \"FutureTime\" program at Joint-ELKA, fostering cross-sector collaboration to improve the efficiency and effectiveness of systems and organizations, with the aim of enhancing quality of life for Israeli citizens.",
       "In her previous roles at ELKA, Hadas contributed to developing the Regional Clusters Initiative. She worked closely with the Eastern Negev regional authorities cluster, establishing and leading a forum for local authority heads, a welfare forum, and a multi-sector leadership program. These efforts culminated in a strategic regional economic development plan for the Eastern Negev.",
       "Before joining ELKA, Hadas founded and managed a nonprofit organization dedicated to advancing equality and social justice. Under her leadership, the organization increased public awareness of social rights, provided the tools needed to exercise those rights, and encouraged active civic engagement to influence decision-making processes affecting citizens' quality of life. She led the organization's southern branch for 17 years.",
       "Hadas holds a Master of Social Work (Administration and Welfare Policy track) and a Bachelor of Social Work, both earned cum laude at Ben-Gurion University."
+    ];
+    var hadasBarzilaiJaPars = [
+      'バルジライ・ハダス氏は、Joint-ELKA（JDC-ELKA）において「FutureTime」プログラムのディレクターを務めています。分野横断的な協働を推進し、制度や組織の効率と有効性を高めることで、イスラエル国民の生活の質の向上を目指しています。',
+      '以前はELKAにおいて、地域クラスター・イニシアティブの開発に貢献しました。東ネゲブ地域自治体クラスターと密接に連携し、地方自治体首長のフォーラム、福祉フォーラム、多分野リーダーシップ・プログラムの設立と運営を主導しました。これらの取り組みは、東ネゲブにおける戦略的な地域経済発展計画の策定につながりました。',
+      'ELKA入社以前は、平等と社会正義の推進に取り組む非営利団体を設立・運営しました。同氏のリーダーシップの下、組織は社会権利に関する市民の認識を高め、権利を行使するために必要な手段を提供し、市民の生活の質に影響を与える意思決定プロセスへの積極的な市民参加を促進しました。同組織の南部支部を17年間率いていました。',
+      'ベン・グリオン大学にて、社会福祉学修士号（行政・福祉政策コース）および社会福祉学学士号を、いずれも最優等（cum laude）で取得しています。'
     ];
     var sigalPars = [
       "Sigal Mautner Siebzehner is an organizational consultant and group facilitator with more than 20 years of experience in organizational, personal, and professional development. At ELKA, she has played a key role in designing and managing initiatives led by senior executives and experts from government ministries, local authorities, and civil society organizations.",
@@ -244,6 +250,12 @@
       "Prior to this role, Tal served as CEO of the Israel Green Building Council, where she led national efforts to advance sustainable urban development. Partnering with government decision-makers, municipalities, industry, and civil society, she promoted policies and practices that integrate environmental, social, and economic sustainability. Earlier, she held senior leadership positions at the Council, including VP of Operations and Training.",
       "Beyond her formal roles, Tal is an active community entrepreneur and a dedicated advocate for the inclusion of people with special needs.",
       "Tal holds a BA in Community Coordination from the Open University and Beit Berl College, and an MA in Mediation and Conflict Resolution from Tel Aviv University."
+    ];
+    var talJaPars = [
+      'マイルズ・タル氏は、JDC-ELKA（イスラエル・エルカ）において、全国公共システム・ネットワーク・イニシアティブ担当ディレクターを務めています。中央政府、地方自治体、市民社会組織、専門家ネットワークなど、多様な主体との連携を通じて、大規模な協働プロジェクトや分野横断的なパートナーシップを推進し、公共システムの強化と複雑な社会課題の解決に取り組んでいます。特に、組織間の協働を実効性のある政策や取り組みへと発展させ、持続的な社会変革につなげることを専門としています。',
+      '現職に就く以前は、イスラエル・グリーンビルディング協会の最高経営責任者（CEO）を務め、持続可能な都市開発の推進に向けた全国的な取り組みを主導しました。政府機関、自治体、産業界、市民社会との連携を通じて、環境・社会・経済の持続可能性を統合した政策や実践の普及に尽力しました。また、それ以前には同協会において事業運営・研修担当副代表（VP of Operations and Training）などの要職を歴任しています。',
+      '職務以外でも、地域社会に根ざしたコミュニティ活動や社会起業に積極的に取り組むとともに、特別な支援を必要とする人々の包摂と社会参加の推進にも力を注いでいます。',
+      'オープン大学およびベイト・ベルル・カレッジにてコミュニティ・コーディネーションの学士号を取得し、テルアビブ大学にて調停・紛争解決学の修士号を取得しています。'
     ];
     var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:'+P.mid+'';
     var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
@@ -282,9 +294,13 @@
     var mashaBioFlipHtml = buildTeamBioFlipHtml('masha-bio-flip', 'ロビーン・マーシャ', mashaJaBioHtml, mashaBioHtml);
     var hadasBioFlipHtml = buildTeamBioFlipHtml('hadas-bio-flip', 'クシェレビチ・ハダス博士', hadasJaBioHtml, hadasBioHtml);
     var hadasBarzilaiBioHtml = hadasBarzilaiPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var hadasBarzilaiJaBioHtml = hadasBarzilaiJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
+    var hadasBarzilaiBioFlipHtml = buildTeamBioFlipHtml('hadas-barzilai-bio-flip', 'バルジライ・ハダス', hadasBarzilaiJaBioHtml, hadasBarzilaiBioHtml);
     var sigalBioHtml = sigalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var yuvalBioHtml = yuvalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var talBioHtml = talPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var talJaBioHtml = talJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
+    var talBioFlipHtml = buildTeamBioFlipHtml('tal-bio-flip', 'マイルズ・タル', talJaBioHtml, talBioHtml);
     var teamBoxStyle = 'box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:24px';
     container.innerHTML = '<div style="min-height:100vh;background:'+P.pale+'">' +
       '<div class="about-banner team-banner" style="background:'+P.hero+';width:100%;overflow:hidden">' +
@@ -313,7 +329,7 @@
           '<div class="team-card team-card-hadas-barzilai team-card-new">' +
             '<div class="team-name"><h2>Hadas Barzilai</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Barzilai.jpg" alt="Hadas Barzilai"></div>' +
-            '<div class="team-bio"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+hadasBarzilaiBioHtml+'</div>' +
+            '<p style="'+pStyle+';margin:0 0 12px"><strong>Director, \"FutureTime\" Program</strong><br/>Joint-ELKA</p>'+hadasBarzilaiBioFlipHtml +
           '</div>' +
           '<div class="team-card team-card-sigal team-card-new">' +
             '<div class="team-name"><h2>Sigal Mautner Siebzehner</h2></div>' +
@@ -328,7 +344,7 @@
           '<div class="team-card team-card-tal team-card-new">' +
             '<div class="team-name"><h2>Tal Miles</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Tal_Miles.png?v=2" alt="Tal Miles"></div>' +
-            '<div class="team-bio"><p style="'+pStyle+';margin-bottom:8px"><strong>Director, National Public System Network Initiatives</strong><br/>Joint-ELKA</p>'+talBioHtml+'</div>' +
+            '<p style="'+pStyle+';margin:0 0 12px"><strong>Director, National Public System Network Initiatives</strong><br/>Joint-ELKA</p>'+talBioFlipHtml +
           '</div>' +
         '</div></div></div></div>';
     var teamCards = container.querySelector('.team-cards-main');
@@ -372,6 +388,8 @@
     }
     bindTeamBioFlip(container.querySelector('#masha-bio-flip'));
     bindTeamBioFlip(container.querySelector('#hadas-bio-flip'));
+    bindTeamBioFlip(container.querySelector('#tal-bio-flip'));
+    bindTeamBioFlip(container.querySelector('#hadas-barzilai-bio-flip'));
   }
 
   function steeringPhotoHtml(m) {
