@@ -247,6 +247,13 @@
     ];
     var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:'+P.mid+'';
     var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var mashaJaPars = [
+      'ロビーン・マーシャ氏は、老年学（ジェロントロジー）、ヘルスケア・イノベーション、そして医療・介護システムの統合を専門とするジェロンテクノロジストおよびプロダクトマネージャーです。',
+      'イスラエルのハイファ大学および日本の横浜市立大学にて老年学の修士号を取得しています。日本には5年間滞在し、長期介護を必要とする高齢者の生活適応プロセスや、高齢者および介護者を支える住環境・生活環境の改善に関する研究に従事しました。',
+      '日本とイスラエルの主要な介護・福祉関連機関との協働を通じて、政策制度、フォーマルケアの仕組み、そして文化的背景が高齢者の生活の質やケアの成果にどのような影響を与えるのかについて、実践と研究の両面から知見を深めてきました。',
+      '現在はイスラエルにおいて、病院から地域リハビリテーションへの円滑な移行を支援する取り組みに注力しています。医師、看護師、リハビリ専門職など多職種の医療チームと連携しながら、医療、リハビリテーション、地域支援を結ぶ統合的なケアモデルの開発に携わり、数多くのヘルスケアプロジェクトを企画立案から実装、成果創出まで主導してきました。',
+      '急速に高齢化が進む社会が直面する複雑な課題に対し、マーシャ氏は学際的な視点からアプローチし、研究成果や実証データを政策や実践につながる人間中心のソリューションへと転換することを目指しています。'
+    ];
     var hadasBioHtml = hadasPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var hadasJaPars = [
       'クシェレビチ・ハダス博士は、教育者、研究者として活動するとともに、日本とイスラエルを結ぶ架け橋として、学術・政策・イノベーション分野における国際交流と協力の促進に取り組んでいます。',
@@ -257,19 +264,23 @@
       'また、クシェレビチ博士は、特定非営利活動法人日本・イスラエル学術文化振興協会（IJAC）の理事長を務めています。IJACは、日本とイスラエルの学術・文化・専門分野における交流と協力の促進を目的として設立された非営利団体です。同協会を通じて、大学、研究者、学生、政策立案者、企業、市民社会組織の連携を支援し、教育、研究、政策対話、文化交流、イノベーションに関するさまざまな事業を推進しています。両国の相互理解を深めるとともに、新たな協力の機会を創出することを目指しています。'
     ];
     var jaPStyle = 'margin:0 0 14px;font-size:14px;line-height:1.8;color:'+P.mid;
+    var mashaJaBioHtml = mashaJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
     var hadasJaBioHtml = hadasJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
-    var hadasBioFlipHtml =
-      '<div class="team-bio-flip" id="hadas-bio-flip" role="button" tabindex="0" aria-label="Toggle English biography">' +
+    function buildTeamBioFlipHtml(flipId, jaTitle, jaBioHtml, enBioHtml) {
+      return '<div class="team-bio-flip" id="'+flipId+'" role="button" tabindex="0" aria-label="Toggle English biography">' +
         '<div class="team-bio-flip-inner">' +
           '<div class="team-bio-flip-face team-bio-flip-front team-bio" lang="ja">' +
-            '<h3>クシェレビチ・ハダス博士</h3>'+hadasJaBioHtml+
+            '<h3>'+jaTitle+'</h3>'+jaBioHtml+
           '</div>' +
-          '<div class="team-bio-flip-face team-bio-flip-back team-bio" lang="en">'+hadasBioHtml+'</div>' +
+          '<div class="team-bio-flip-face team-bio-flip-back team-bio" lang="en">'+enBioHtml+'</div>' +
         '</div>' +
         '<div class="team-bio-flip-hint" data-hint-front="English" data-hint-back="日本語">' +
           '<span class="team-bio-flip-hint-label">English</span><span class="team-bio-flip-hint-arrow" aria-hidden="true">→</span>' +
         '</div>' +
       '</div>';
+    }
+    var mashaBioFlipHtml = buildTeamBioFlipHtml('masha-bio-flip', 'ロビーン・マーシャ', mashaJaBioHtml, mashaBioHtml);
+    var hadasBioFlipHtml = buildTeamBioFlipHtml('hadas-bio-flip', 'クシェレビチ・ハダス博士', hadasJaBioHtml, hadasBioHtml);
     var hadasBarzilaiBioHtml = hadasBarzilaiPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var sigalBioHtml = sigalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var yuvalBioHtml = yuvalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
@@ -286,7 +297,7 @@
           '<div class="team-card team-card-masha">' +
             '<div class="team-name"><h2>Masha Robeen</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Masha_Robeen.png?v=3" alt="Masha Robeen"></div>' +
-            '<div class="team-bio">'+mashaBioHtml+'</div>' +
+            mashaBioFlipHtml +
             '<div class="team-card-logo"><img src="images/JIAT_logo.png?v=2" alt="Japan Israel Aging Tech Association (JIAT)"></div>' +
           '</div>' +
           '<div class="team-card team-card-hadas">' +
@@ -334,31 +345,33 @@
       programTeam.insertBefore(yuvalCard, programTeam.firstElementChild);
       programTeam.insertBefore(hadasBarzilaiCard, talCard);
     }
-    var hadasFlip = container.querySelector('#hadas-bio-flip');
-    if (hadasFlip) {
-      var hadasHint = hadasFlip.querySelector('.team-bio-flip-hint');
-      function updateHadasFlipHint(flipped) {
-        if (!hadasHint) return;
-        var label = hadasHint.querySelector('.team-bio-flip-hint-label');
-        var arrow = hadasHint.querySelector('.team-bio-flip-hint-arrow');
+    function bindTeamBioFlip(flipEl) {
+      if (!flipEl) return;
+      var hint = flipEl.querySelector('.team-bio-flip-hint');
+      function updateFlipHint(flipped) {
+        if (!hint) return;
+        var label = hint.querySelector('.team-bio-flip-hint-label');
+        var arrow = hint.querySelector('.team-bio-flip-hint-arrow');
         if (label && arrow) {
-          label.textContent = flipped ? hadasHint.getAttribute('data-hint-back') : hadasHint.getAttribute('data-hint-front');
+          label.textContent = flipped ? hint.getAttribute('data-hint-back') : hint.getAttribute('data-hint-front');
           arrow.textContent = flipped ? '←' : '→';
-          hadasHint.classList.toggle('is-flipped', flipped);
+          hint.classList.toggle('is-flipped', flipped);
         }
       }
-      function toggleHadasBioFlip() {
-        var flipped = hadasFlip.classList.toggle('is-flipped');
-        updateHadasFlipHint(flipped);
+      function toggleBioFlip() {
+        var flipped = flipEl.classList.toggle('is-flipped');
+        updateFlipHint(flipped);
       }
-      hadasFlip.onclick = toggleHadasBioFlip;
-      hadasFlip.onkeydown = function (e) {
+      flipEl.onclick = toggleBioFlip;
+      flipEl.onkeydown = function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          toggleHadasBioFlip();
+          toggleBioFlip();
         }
       };
     }
+    bindTeamBioFlip(container.querySelector('#masha-bio-flip'));
+    bindTeamBioFlip(container.querySelector('#hadas-bio-flip'));
   }
 
   function steeringPhotoHtml(m) {
