@@ -220,7 +220,7 @@
       "Dr. Hadas Kushelevich is an educator, researcher, and bridge-builder between Israel and Japan. Originally from Israel, she holds a B.A. in Japanese Studies and an M.A. in Political Science from the Hebrew University of Jerusalem. She moved to Japan in 2012 as a recipient of the prestigious MEXT scholarship and has lived there ever since, developing deep familiarity with Japanese society, institutions, and culture.",
       "Dr. Kushelevich earned her Ph.D. from the Graduate School of Law and Politics at Osaka University, where her research focuses on Japanese political institutions and regulatory governance. Her doctoral work examined the regulation of Japan's pharmaceutical market, exploring the intersection of politics, public policy, and organizational reputation.",
       "She teaches at leading universities in Japan and Israel, including Kyoto University, Doshisha University, Ritsumeikan University, and the University of Haifa. Alongside her academic work, she has led numerous cross-cultural initiatives connecting students, researchers, and professionals from different countries.",
-      "Living in Japan for over a decade, Hadas engages with the country not only as a scholar but also through everyday life. Fluent in Japanese and deeply immersed in the culture, she continuously explores Japan's institutions, communities, traditions, arts, and landscapes. Her curiosity about the \"Land of the Rising Sun\" fuels her work and shapes the learning experiences she designs for others."
+      "In addition to her academic work, Dr. Kushelevich serves as Chairperson of the Israel–Japan Academic and Cultural Relations Association (<a href=\"https://www.japan-israel.org/\" target=\"_blank\" rel=\"noopener noreferrer\">IJAC</a>), a non-profit organization dedicated to strengthening academic, cultural, and professional ties between Israel and Japan. Through IJAC, she promotes international collaboration among universities, researchers, students, policymakers, businesses, and civil society organizations. The association develops initiatives in education, research, policy dialogue, cultural exchange, and innovation, fostering mutual understanding and creating new opportunities for cooperation between the two countries. <a href=\"https://www.japan-israel.org/\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.japan-israel.org/</a>"
     ];
     var hadasBarzilaiPars = [
       "Hadas Barzilai directs the \"FutureTime\" program at Joint-ELKA, fostering cross-sector collaboration to improve the efficiency and effectiveness of systems and organizations, with the aim of enhancing quality of life for Israeli citizens.",
@@ -248,6 +248,28 @@
     var pStyle = 'margin:0 0 16px;font-size:15px;line-height:1.75;color:'+P.mid+'';
     var mashaBioHtml = mashaPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var hadasBioHtml = hadasPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
+    var hadasJaPars = [
+      'クシェレビチ・ハダス博士は、教育者、研究者として活動するとともに、日本とイスラエルを結ぶ架け橋として、学術・政策・イノベーション分野における国際交流と協力の促進に取り組んでいます。',
+      'イスラエル出身。ヘブライ大学にて日本研究の学士号および政治学の修士号を取得しました。2012年、文部科学省（MEXT）国費外国人留学生として来日し、以来10年以上にわたり日本を拠点として研究・教育活動を続けています。',
+      '大阪大学大学院法学研究科にて博士号（法学）を取得。専門は日本政治、規制ガバナンス、および公共政策です。博士論文では、日本の医薬品市場における規制の形成と運用を題材に、政治、公共政策、組織レピュテーションの相互作用について研究を行いました。',
+      '現在は、京都大学、同志社大学、立命館大学、ハイファ大学など、日本およびイスラエルの高等教育機関において教育・研究活動に従事しています。また、学生、研究者、行政関係者、企業関係者をつなぐ数多くの国際プロジェクトや教育プログラムの企画・運営にも携わっています。',
+      '研究者としての活動に加え、日本社会を深く理解するため、地域社会、文化、伝統芸能、芸術、歴史、そして各地の風土に触れながら、日々学びを重ねています。流暢な日本語を活かし、多様な立場の人々との対話を通じて、日本とイスラエルの相互理解と協力関係の発展に尽力しています。',
+      'また、クシェレビチ博士は、特定非営利活動法人日本・イスラエル学術文化振興協会（IJAC）の理事長を務めています。IJACは、日本とイスラエルの学術・文化・専門分野における交流と協力の促進を目的として設立された非営利団体です。同協会を通じて、大学、研究者、学生、政策立案者、企業、市民社会組織の連携を支援し、教育、研究、政策対話、文化交流、イノベーションに関するさまざまな事業を推進しています。両国の相互理解を深めるとともに、新たな協力の機会を創出することを目指しています。'
+    ];
+    var jaPStyle = 'margin:0 0 14px;font-size:14px;line-height:1.8;color:'+P.mid;
+    var hadasJaBioHtml = hadasJaPars.map(function(t){ return '<p style="'+jaPStyle+'">'+t+'</p>'; }).join('');
+    var hadasBioFlipHtml =
+      '<div class="team-bio-flip" id="hadas-bio-flip" role="button" tabindex="0" aria-label="Toggle English biography">' +
+        '<div class="team-bio-flip-inner">' +
+          '<div class="team-bio-flip-face team-bio-flip-front team-bio" lang="ja">' +
+            '<h3>クシェレビチ・ハダス博士</h3>'+hadasJaBioHtml+
+          '</div>' +
+          '<div class="team-bio-flip-face team-bio-flip-back team-bio" lang="en">'+hadasBioHtml+'</div>' +
+        '</div>' +
+        '<div class="team-bio-flip-hint" data-hint-front="English" data-hint-back="日本語">' +
+          '<span class="team-bio-flip-hint-label">English</span><span class="team-bio-flip-hint-arrow" aria-hidden="true">→</span>' +
+        '</div>' +
+      '</div>';
     var hadasBarzilaiBioHtml = hadasBarzilaiPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var sigalBioHtml = sigalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
     var yuvalBioHtml = yuvalPars.map(function(t){ return '<p style="'+pStyle+'">'+t+'</p>'; }).join('');
@@ -270,7 +292,7 @@
           '<div class="team-card team-card-hadas">' +
             '<div class="team-name"><h2>Dr. Hadas Kushelevich</h2></div>' +
             '<div class="team-photo-wrap"><img src="'+PHOTO_DIR+'Hadas_Kushelevich.png?v=2" alt="Dr. Hadas Kushelevich"></div>' +
-            '<div class="team-bio">'+hadasBioHtml+'</div>' +
+            hadasBioFlipHtml +
             '<div class="team-card-logo"><img src="images/IJAC_logo.png?v=2" alt="International Journal of Arts and Commerce (IJAC)"></div>' +
           '</div>' +
         '</div></div>' +
@@ -311,6 +333,31 @@
     if (programTeam && yuvalCard && hadasBarzilaiCard && talCard) {
       programTeam.insertBefore(yuvalCard, programTeam.firstElementChild);
       programTeam.insertBefore(hadasBarzilaiCard, talCard);
+    }
+    var hadasFlip = container.querySelector('#hadas-bio-flip');
+    if (hadasFlip) {
+      var hadasHint = hadasFlip.querySelector('.team-bio-flip-hint');
+      function updateHadasFlipHint(flipped) {
+        if (!hadasHint) return;
+        var label = hadasHint.querySelector('.team-bio-flip-hint-label');
+        var arrow = hadasHint.querySelector('.team-bio-flip-hint-arrow');
+        if (label && arrow) {
+          label.textContent = flipped ? hadasHint.getAttribute('data-hint-back') : hadasHint.getAttribute('data-hint-front');
+          arrow.textContent = flipped ? '←' : '→';
+          hadasHint.classList.toggle('is-flipped', flipped);
+        }
+      }
+      function toggleHadasBioFlip() {
+        var flipped = hadasFlip.classList.toggle('is-flipped');
+        updateHadasFlipHint(flipped);
+      }
+      hadasFlip.onclick = toggleHadasBioFlip;
+      hadasFlip.onkeydown = function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleHadasBioFlip();
+        }
+      };
     }
   }
 

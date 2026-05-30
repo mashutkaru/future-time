@@ -292,6 +292,81 @@
       border-radius: 10px;
     }
     .team-card .team-bio { flex: 1 1 auto; }
+    .team-bio-flip {
+      flex: 1 1 auto;
+      min-height: 200px;
+      perspective: 900px;
+      cursor: pointer;
+    }
+    .team-bio-flip-inner {
+      position: relative;
+      width: 100%;
+      min-height: 200px;
+      transform-style: preserve-3d;
+      transition: transform 0.55s ease;
+    }
+    .team-bio-flip.is-flipped .team-bio-flip-inner {
+      transform: rotateY(180deg);
+    }
+    .team-bio-flip-face {
+      position: relative;
+      width: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      max-height: 420px;
+      overflow-y: auto;
+    }
+    .team-bio-flip-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transform: rotateY(180deg);
+    }
+    .team-bio-flip-front h3 {
+      margin: 0 0 14px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-on-light);
+      text-align: center;
+      line-height: 1.35;
+    }
+    .team-bio-flip-hint {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      align-self: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 2px solid var(--teal-hero);
+      background: var(--teal-pale);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--teal-dark);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .team-bio-flip-hint:hover {
+      background: #ffffff;
+      border-color: var(--teal-dark);
+    }
+    .team-bio-flip-hint-arrow {
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 900;
+    }
+    .team-bio-flip-hint.is-flipped .team-bio-flip-hint-arrow {
+      order: -1;
+    }
+    .team-bio-flip {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .team-card-logo {
       margin-top: auto;
       padding-top: 24px;
